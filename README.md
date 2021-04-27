@@ -136,6 +136,9 @@ The Vibrotactile Tongue Vision (VTTV) system is an open-source programmable tong
 VTTV is motivated by our interest in enabling users to craft tactile sensory experiences. Crafting tactile experiences has the potential to engage a wide range of users through an accessible interface and hackable TDU actuator. The tongue is an extremely sensitive and uniquely discrete area for open-source haptic output that has not been fully explored [3].
 
 ### Documentation
+
+#### Hardware
+
 The VTTV will use seven ERM coin cell vibration motors (Figure 1). The TDU will be interfaced with a controller and be encased in an easily sourceable, mouth-safe, substrate. The controller (Figure 2) will programmatically control seven individual haptic motors using a Raspberry Pi 4, syntacts board, Texas Instruments’ DRV2605L haptic motor drivers, an LCD screen, and potentiometers.
 
 Figure 1
@@ -143,10 +146,6 @@ Figure 1
 
 Figure 2
 <img alt="Controller Picture" src="images/architecture/controller.png" width="auto" height="auto"/>
-
-#### Hardware
-
-<!-- Describe your hardware components -->
 
 ##### Sensors wiring
 
