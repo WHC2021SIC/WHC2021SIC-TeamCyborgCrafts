@@ -4,15 +4,20 @@ from syntacts import *
 
 GAIN = 1
 ADC_UPPER_LIMIT = 1300
-NUM_CHANNELS = 4
+NUM_CHANNELS = 7
+NUM_ADC_CHANNELS = 4
 SAMPLE_PERIOD = .25
 FREQUENCY = 220
+ADC1_ADDR = 0x49
+ADC2_ADDR = 0x4B
+BUS_NUM = 1
 
 if __name__ == "__main__":
     # Create session instance
     s = Session()
     # Create instance for one of the ADCs
-    adc1 = Adafruit_ADS1x15.ADS1015(address=0x49, busnum=1)
+    adc1 = Adafruit_ADS1x15.ADS1015(address=ADC1_ADDR, busnum=BUS_NUM)
+    adc2 = Adafruit_ADS1x15.ADS1015(address=ADC2_ADDR, busnum=BUS_NUM)
     s.open()
 
     # Create a base sine wave for motors
@@ -24,7 +29,13 @@ if __name__ == "__main__":
     while True:
         # For each channel get an ADC reading, generate a scale factor, create a sequence, and log data
         for channel in range(NUM_CHANNELS):
-            adc_reading = adc1.read_adc(channel, gain=GAIN)
+            if channel < NUM_ADC_CHANNELS:
+                adc_obj = adc1
+                adc_channel = channel
+            else:
+                adc_obj = adc2
+                adc_channel = channel % 4
+            adc_reading = adc_obj.read_adc(adc_channel, gain=GAIN)
             if adc_reading > ADC_UPPER_LIMIT:
                 adc_readings[channel] = ADC_UPPER_LIMIT
             else:
