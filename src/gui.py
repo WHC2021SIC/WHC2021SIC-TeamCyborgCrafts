@@ -7,6 +7,7 @@ Created on Thu Jun 17 21:11:08 2021
 
 import tkinter as tk
 from tkinter import ttk
+
   
  
 LARGEFONT =("Verdana", 35)
@@ -79,12 +80,12 @@ class StartPage(tk.Frame):
         # using grid
         button2.grid(row = 2, column = 0, padx = 10, pady = 10)
         
-        button2 = ttk.Button(self, text ="Games",
+        button3 = ttk.Button(self, text ="Games",
         command = lambda : controller.show_frame(Games))
      
         # putting the button in its place by
         # using grid
-        button2.grid(row = 3, column = 0, padx = 10, pady = 10)
+        button3.grid(row = 3, column = 0, padx = 10, pady = 10)
   
   
           
