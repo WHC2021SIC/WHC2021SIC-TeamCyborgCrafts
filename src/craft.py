@@ -24,7 +24,6 @@ if __name__ == "__main__":
     base_wave = Sine(FREQUENCY)
 
     # Instantiate ADC Readings and Holders for sequences for each one of the channels/sensors
-    adc_readings = [0] * NUM_CHANNELS
     sequences = [None] * NUM_CHANNELS
     while True:
         # For each channel get an ADC reading, generate a scale factor, create a sequence, and log data
@@ -34,12 +33,10 @@ if __name__ == "__main__":
                 adc_channel = channel
             else:
                 adc_obj = adc2
-                adc_channel = channel % 4
+                adc_channel = channel % NUM_ADC_CHANNELS
             adc_reading = adc_obj.read_adc(adc_channel, gain=GAIN)
             if adc_reading > ADC_UPPER_LIMIT:
-                adc_readings[channel] = ADC_UPPER_LIMIT
-            else:
-                adc_readings[channel] = adc_reading
+                adc_reading = ADC_UPPER_LIMIT
 
             scale_factor = adc_reading/ADC_UPPER_LIMIT
             # Attack, Sustain, Release
