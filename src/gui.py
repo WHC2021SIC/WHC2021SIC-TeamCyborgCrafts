@@ -152,12 +152,30 @@ class Craft(tk.Frame):
         label = ttk.Label(self, text ="Craft", font = LARGEFONT)
         label.grid(row = 0, column = 0, padx = 10, pady = 10)
         
+                # button to show frame 2 with text
+        # layout2
+        button1 = ttk.Button(self, text ="Start",
+                            command = lambda : controller.startCraft(TRUE))
+     
+        # putting the button in its place by
+        # using grid
+        button1.grid(row = 0, column = 0, padx = 10, pady = 10)
+  
+        # button to show frame 3 with text
+        # layout3
+        button2 = ttk.Button(self, text ="Stop",
+                            command = lambda : controller.startCraft(FALSE))
+        
+        # putting the button in its place by
+        # using grid
+        button2.grid(row = 1, column = 0, padx = 10, pady = 10)
+        
         button3 = ttk.Button(self, text ="Home",
                             command = lambda : controller.show_frame(StartPage))
      
         # putting the button in its place by
         # using grid
-        button3.grid(row = 1, column = 0, padx = 10, pady = 10)
+        button3.grid(row = 2, column = 0, padx = 10, pady = 10)
   
   
   
@@ -386,6 +404,14 @@ def user_input(value, char_mapping_dict):
 
     except ValueError:
        print("invalid input")
+       
+       
+def startCraft(play):
+     if play is true:   
+        
+        
+        
+        
 
 
   
