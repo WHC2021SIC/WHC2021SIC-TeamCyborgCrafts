@@ -1,10 +1,7 @@
 
 from time import sleep
 from syntacts import *
-from ship import Minesweeper, Battleship, Destroyer, Submarine
-from grid import Grid, OccupantType
-from weapon import Cannon, Laser
-from enum import Enum
+
 
 
 GAIN = 1
