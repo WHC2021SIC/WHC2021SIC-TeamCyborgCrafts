@@ -11,7 +11,6 @@ from time import sleep
 import syntacts as s
 
 
-
   
  
 LARGEFONT =("Verdana", 35)
@@ -69,7 +68,7 @@ class tkinterApp(tk.Tk):
          
         # __init__ function for class Tk
         tk.Tk.__init__(self, *args, **kwargs)
-        self.title("Simple Prog")
+        self.title("VTTV")
          
         # creating a container
         container = tk.Frame(self) 
@@ -101,6 +100,8 @@ class tkinterApp(tk.Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
+        
+
   
 # first window frame startpage
   
@@ -147,7 +148,7 @@ class Craft(tk.Frame):
     def __init__(self, parent, controller):
          
         tk.Frame.__init__(self, parent)
-  
+        #exec(open("craft.py").read())
         label = ttk.Label(self, text ="Craft", font = LARGEFONT)
         label.grid(row = 0, column = 0, padx = 10, pady = 10)
         
@@ -250,12 +251,23 @@ class Train1(tk.Frame):
         # using grid
         button10.grid(row = 4, column = 1, padx = 10, pady = 10)
         
-class Train2(tk.Frame):
+class Train2(tk.Frame):      
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
   
         label = ttk.Label(self, text ="Letters", font = LARGEFONT)
         label.grid(row = 0, column = 0, padx = 10, pady = 10)
+        
+        letter_var =tk.StringVar()
+        
+        letter_entry = tk.Entry(self,textvariable = letter_var, font=('calibre',10,'normal'))
+        
+        letter_entry.grid(row=1, column=0, padx=10, pady=10)
+        
+        button1 = ttk.Button(self, text="Submit", 
+                             command = lambda: submit())
+        
+        button1.grid(row=2, column = 0, padx=10, pady=10)
         
         # button to show frame 3 with text
         # layout3
@@ -264,9 +276,11 @@ class Train2(tk.Frame):
      
         # putting the button in its place by
         # using grid
-        button2.grid(row = 1, column = 0, padx = 10, pady = 10)
+        button2.grid(row = 3, column = 0, padx = 10, pady = 10)
         
-        
+        def submit():
+            letter=letter_var.get()
+            user_input(letter, letter_mapping_dict)
 
 class Games(tk.Frame):
     def __init__(self, parent, controller):
@@ -296,6 +310,8 @@ class Games(tk.Frame):
         # putting the button in its place by
         # using grid
         button3.grid(row = 3, column = 1, padx = 10, pady = 10)
+        
+        
         
 class Game1(tk.Frame):
     def __init__(self, parent, controller):
@@ -370,6 +386,7 @@ def user_input(value, char_mapping_dict):
 
     except ValueError:
        print("invalid input")
+
 
   
 # Driver Code
