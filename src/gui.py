@@ -9,12 +9,24 @@ import tkinter as tk
 from tkinter import ttk
 from time import sleep
 import syntacts as s
+import Adafruit_ADS1x15
+import threading
 
 LARGEFONT = ("Verdana", 35)
 
 GAIN = 1
 SAMPLE_PERIOD = 1
 FREQUENCY = 220
+ADC_UPPER_LIMIT = 1300
+NUM_CHANNELS = 7
+NUM_ADC_CHANNELS = 4
+SAMPLE_PERIOD = .25
+FREQUENCY = 220
+ADC1_ADDR = 0x49
+ADC2_ADDR = 0x4B
+BUS_NUM = 1
+
+sess = s.Session()
 
 num_mapping_dict = {'1': [0, 1, 1, 0, 0, 0, 0],
                     '2': [1, 1, 0, 1, 1, 0, 1],
@@ -130,8 +142,12 @@ class StartPage(tk.Frame):
         button3.grid(row=3, column=0, padx=10, pady=10)
 
 
+
 # second window frame page1
 class Craft(tk.Frame):
+    def home_handler(self, controller):
+        startCraft(False)
+        controller.show_frame(StartPage)
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -142,27 +158,27 @@ class Craft(tk.Frame):
                 # button to show frame 2 with text
         # layout2
         button1 = ttk.Button(self, text ="Start",
-                            command = lambda : controller.startCraft(TRUE))
+                            command = lambda : startCraft(True))
 
         # putting the button in its place by
         # using grid
-        button1.grid(row = 0, column = 0, padx = 10, pady = 10)
+        button1.grid(row = 1, column = 0, padx = 10, pady = 10)
 
         # button to show frame 3 with text
         # layout3
         button2 = ttk.Button(self, text ="Stop",
-                            command = lambda : controller.startCraft(FALSE))
+                            command = lambda : startCraft(False))
 
         # putting the button in its place by
         # using grid
-        button2.grid(row = 1, column = 0, padx = 10, pady = 10)
+        button2.grid(row = 2, column = 0, padx = 10, pady = 10)
 
         button3 = ttk.Button(self, text ="Home",
-                            command = lambda : controller.show_frame(StartPage))
+                            command = lambda : self.home_handler(controller))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row = 2, column = 0, padx = 10, pady = 10)
+        button3.grid(row = 3, column = 0, padx = 10, pady = 10)
 
 
 
@@ -367,7 +383,7 @@ def print_mapping(value, char_mapping_dict):
 
 
 def user_input(value, char_mapping_dict):
-    sess = s.Session()
+    global sess
     sess.open()
     # Create a base sine wave for motors
     base_wave = s.Sine(FREQUENCY)
@@ -393,10 +409,73 @@ def user_input(value, char_mapping_dict):
 
     except ValueError:
        print("invalid input")
+    sess.close()
+
+kill_thread = True
+thread = None
+
+def thread_function():
+
+    global kill_thread
+    global sess
+
+    # Create instance for one of the ADCs
+    adc1 = Adafruit_ADS1x15.ADS1015(address=ADC1_ADDR, busnum=BUS_NUM)
+    adc2 = Adafruit_ADS1x15.ADS1015(address=ADC2_ADDR, busnum=BUS_NUM)
+    sess.open()
+
+    # Create a base sine wave for motors
+    base_wave = s.Sine(FREQUENCY)
+
+    # Instantiate ADC Readings and Holders for sequences for each one of the channels/sensors
+    sequences = [None] * NUM_CHANNELS
+    while True:
+        # For each channel get an ADC reading, generate a scale factor, create a sequence, and log data
+        for channel in range(NUM_CHANNELS):
+            if channel < NUM_ADC_CHANNELS:
+                adc_obj = adc1
+                adc_channel = channel
+            else:
+                adc_obj = adc2
+                adc_channel = channel % NUM_ADC_CHANNELS
+            adc_reading = adc_obj.read_adc(adc_channel, gain=GAIN)
+            if adc_reading > ADC_UPPER_LIMIT:
+                adc_reading = ADC_UPPER_LIMIT
+
+            scale_factor = adc_reading/ADC_UPPER_LIMIT
+            # Attack, Sustain, Release
+            # sequences[channel] = base_wave * ASR(SAMPLE_PERIOD/3, SAMPLE_PERIOD/3, SAMPLE_PERIOD/3, scale_factor)
+            # Square envelope
+            sequences[channel] = base_wave * s.Envelope(SAMPLE_PERIOD, scale_factor)
+            print("Channel: {}, ADC: {}, Scale Factor: {}, Seq Len: {}".format(channel, adc_reading, scale_factor, sequences[channel].length))
+
+        # Start playing for each channel
+        for channel in range(NUM_CHANNELS):
+            sess.play(channel, sequences[channel])
+
+        # Play until sequence is about over
+        sleep(sequences[0].length*.9)
+
+        if kill_thread:
+            print("Exiting loop")
+            break
+
+    sess.close()
        
 
 def startCraft(play):
-     if play is true:
+    global kill_thread
+    global thread
+    if play is True:
+        print('start')
+        kill_thread = False
+        thread = threading.Thread(target=thread_function, args=())
+        thread.start()
+    else:
+        print("stop")
+        kill_thread = True
+        thread.join()
+
 
 
 
