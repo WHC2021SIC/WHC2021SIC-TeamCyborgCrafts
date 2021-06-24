@@ -12,7 +12,7 @@ import syntacts as s
 import Adafruit_ADS1x15
 import threading
 
-LARGEFONT = ("Verdana", 35)
+LARGEFONT = ("Verdana", 30)
 
 GAIN = 1
 SAMPLE_PERIOD = 1
@@ -113,18 +113,19 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         # label of frame Layout 2
-        label = ttk.Label(self, text="Welcome to VTTV", font=LARGEFONT)
+        label = ttk.Label(self, text="Welcome to", font=LARGEFONT)
+        label1 = ttk.Label(self, text="VTTV", font=LARGEFONT)
 
         # putting the grid in its place by using
         # grid
-        label.grid(row=0, column=0, padx=10, pady=10)
-
+        label.grid(row=0, column=0, padx=20, pady=10, columnspan=3)
+        label1.grid(row=1, column=0, padx=20, pady=10, columnspan=3)
         button1 = ttk.Button(self, text="Craft",
                              command=lambda: controller.show_frame(Craft))
 
         # putting the button in its place by
         # using grid
-        button1.grid(row=1, column=0, padx=10, pady=10)
+        button1.grid(row=2, column=1, padx=10, pady=10)
 
         ## button to show frame 2 with text layout2
         button2 = ttk.Button(self, text="Train",
@@ -132,14 +133,14 @@ class StartPage(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=2, column=0, padx=10, pady=10)
+        button2.grid(row=3, column=1, padx=10, pady=10)
 
         button3 = ttk.Button(self, text="Games",
                              command=lambda: controller.show_frame(Games))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row=3, column=0, padx=10, pady=10)
+        button3.grid(row=4, column=1, padx=10, pady=10)
 
 
 
@@ -153,7 +154,7 @@ class Craft(tk.Frame):
         tk.Frame.__init__(self, parent)
         #exec(open("craft.py").read())
         label = ttk.Label(self, text ="Craft", font = LARGEFONT)
-        label.grid(row = 0, column = 0, padx = 10, pady = 10)
+        label.grid(row = 0, column=0, padx = 90, pady = 10)
 
                 # button to show frame 2 with text
         # layout2
@@ -162,7 +163,7 @@ class Craft(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button1.grid(row = 1, column = 0, padx = 10, pady = 10)
+        button1.grid(row = 1, column = 0, padx = 90, pady = 10)
 
         # button to show frame 3 with text
         # layout3
@@ -186,6 +187,9 @@ class Craft(tk.Frame):
 class Train(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        
+        label = ttk.Label(self, text ="Train", font = LARGEFONT)
+        label.grid(row = 0, column=0, padx = 90, pady = 10)
 
         # button to show frame 2 with text
         # layout2
@@ -194,7 +198,7 @@ class Train(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button1.grid(row=0, column=0, padx=10, pady=10)
+        button1.grid(row=1, column=0, padx=10, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -203,14 +207,14 @@ class Train(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=1, column=0, padx=10, pady=10)
+        button2.grid(row=2, column=0, padx=10, pady=10)
 
         button3 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row=2, column=0, padx=10, pady=10)
+        button3.grid(row=3, column=0, padx=10, pady=10)
 
 
 class Train1(tk.Frame):
@@ -218,7 +222,7 @@ class Train1(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         label = ttk.Label(self, text="Numbers", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
+        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
         self.btn = [0 for x in range(9)]
 
@@ -229,39 +233,39 @@ class Train1(tk.Frame):
 
         button1 = ttk.Button(self, text="1", command=lambda: user_input('1', num_mapping_dict))
 
-        button1.grid(row=1, column=1, padx=10, pady=10)
+        button1.grid(row=1, column=0, padx=10, pady=10)
 
         button2 = ttk.Button(self, text="2", command=lambda: user_input('2', num_mapping_dict))
 
-        button2.grid(row=1, column=2, padx=10, pady=10)
+        button2.grid(row=1, column=1, padx=10, pady=10)
 
         button3 = ttk.Button(self, text="3", command=lambda: user_input('3', num_mapping_dict))
 
-        button3.grid(row=1, column=3, padx=10, pady=10)
+        button3.grid(row=1, column=2, padx=10, pady=10)
 
         button4 = ttk.Button(self, text="4", command=lambda: user_input('4', num_mapping_dict))
 
-        button4.grid(row=2, column=1, padx=10, pady=10)
+        button4.grid(row=2, column=0, padx=10, pady=10)
 
         button5 = ttk.Button(self, text="5", command=lambda: user_input('5', num_mapping_dict))
 
-        button5.grid(row=2, column=2, padx=10, pady=10)
+        button5.grid(row=2, column=1, padx=10, pady=10)
 
         button6 = ttk.Button(self, text="6", command=lambda: user_input('6', num_mapping_dict))
 
-        button6.grid(row=2, column=3, padx=10, pady=10)
+        button6.grid(row=2, column=2, padx=10, pady=10)
 
         button7 = ttk.Button(self, text="7", command=lambda: user_input('7', num_mapping_dict))
 
-        button7.grid(row=3, column=1, padx=10, pady=10)
+        button7.grid(row=3, column=0, padx=10, pady=10)
 
         button8 = ttk.Button(self, text="8", command=lambda: user_input('8', num_mapping_dict))
 
-        button8.grid(row=3, column=2, padx=10, pady=10)
+        button8.grid(row=3, column=1, padx=10, pady=10)
 
         button9 = ttk.Button(self, text="9", command=lambda: user_input('9', num_mapping_dict))
 
-        button9.grid(row=3, column=3, padx=10, pady=10)
+        button9.grid(row=3, column=2, padx=10, pady=10)
         # button to show frame 3 with text
         # layout3
         button10 = ttk.Button(self, text="Home",
@@ -338,17 +342,60 @@ class Game1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text="Whack a Mole", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
 
+        label = ttk.Label(self, text="Whack A Mole", font=LARGEFONT)
+        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+
+        self.btn = [0 for x in range(9)]
+
+        # for x in range(8):
+        #     number = str(x+1);
+        #     self.btn[x] = ttk.Button(self, text=number, command = lambda: user_input(number, num_mapping_dict))
+        #     self.btn[x].grid(column=x, row=1, padx=10, pady=10)
+
+        button1 = ttk.Button(self, text="1", command=lambda: user_input('1', num_mapping_dict))
+
+        button1.grid(row=1, column=0, padx=10, pady=10)
+
+        button2 = ttk.Button(self, text="2", command=lambda: user_input('2', num_mapping_dict))
+
+        button2.grid(row=1, column=1, padx=10, pady=10)
+
+        button3 = ttk.Button(self, text="3", command=lambda: user_input('3', num_mapping_dict))
+
+        button3.grid(row=1, column=2, padx=10, pady=10)
+
+        button4 = ttk.Button(self, text="4", command=lambda: user_input('4', num_mapping_dict))
+
+        button4.grid(row=2, column=0, padx=10, pady=10)
+
+        button5 = ttk.Button(self, text="5", command=lambda: user_input('5', num_mapping_dict))
+
+        button5.grid(row=2, column=1, padx=10, pady=10)
+
+        button6 = ttk.Button(self, text="6", command=lambda: user_input('6', num_mapping_dict))
+
+        button6.grid(row=2, column=2, padx=10, pady=10)
+
+        button7 = ttk.Button(self, text="7", command=lambda: user_input('7', num_mapping_dict))
+
+        button7.grid(row=3, column=0, padx=10, pady=10)
+
+        button8 = ttk.Button(self, text="8", command=lambda: user_input('8', num_mapping_dict))
+
+        button8.grid(row=3, column=1, padx=10, pady=10)
+
+        button9 = ttk.Button(self, text="9", command=lambda: user_input('9', num_mapping_dict))
+
+        button9.grid(row=3, column=2, padx=10, pady=10)
         # button to show frame 3 with text
         # layout3
-        button2 = ttk.Button(self, text="Home",
-                             command=lambda: controller.show_frame(StartPage))
+        button10 = ttk.Button(self, text="Home",
+                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=1, column=0, padx=10, pady=10)
+        button10.grid(row=4, column=1, padx=10, pady=10)
 
 
 class Game2(tk.Frame):
