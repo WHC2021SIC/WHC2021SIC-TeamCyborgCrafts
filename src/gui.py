@@ -8,11 +8,14 @@ Created on Thu Jun 17 21:11:08 2021
 import tkinter as tk
 from tkinter import ttk
 from time import sleep
-import syntacts as s
+import syntacts as s 
+import os
 import Adafruit_ADS1x15
 import threading
+from PIL import Image, ImageTk
 
 LARGEFONT = ("Verdana", 30)
+
 
 GAIN = 1
 SAMPLE_PERIOD = 1
@@ -339,8 +342,12 @@ class Games(tk.Frame):
 
 
 class Game1(tk.Frame):
+
+        
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        
+
 
 
         label = ttk.Label(self, text="Whack A Mole", font=LARGEFONT)
@@ -353,39 +360,39 @@ class Game1(tk.Frame):
         #     self.btn[x] = ttk.Button(self, text=number, command = lambda: user_input(number, num_mapping_dict))
         #     self.btn[x].grid(column=x, row=1, padx=10, pady=10)
 
-        button1 = ttk.Button(self, text="1", command=lambda: user_input('1', num_mapping_dict))
 
+        button1 = ttk.Button(self, command=lambda:ChangeLabelText(button1))
         button1.grid(row=1, column=0, padx=10, pady=10)
 
-        button2 = ttk.Button(self, text="2", command=lambda: user_input('2', num_mapping_dict))
+        button2 = ttk.Button(self,command=lambda: user_input('2', num_mapping_dict))
 
         button2.grid(row=1, column=1, padx=10, pady=10)
 
-        button3 = ttk.Button(self, text="3", command=lambda: user_input('3', num_mapping_dict))
+        button3 = ttk.Button(self, command=lambda: user_input('3', num_mapping_dict))
 
         button3.grid(row=1, column=2, padx=10, pady=10)
 
-        button4 = ttk.Button(self, text="4", command=lambda: user_input('4', num_mapping_dict))
+        button4 = ttk.Button(self, command=lambda: user_input('4', num_mapping_dict))
 
         button4.grid(row=2, column=0, padx=10, pady=10)
 
-        button5 = ttk.Button(self, text="5", command=lambda: user_input('5', num_mapping_dict))
+        button5 = ttk.Button(self,  command=lambda: user_input('5', num_mapping_dict))
 
         button5.grid(row=2, column=1, padx=10, pady=10)
 
-        button6 = ttk.Button(self, text="6", command=lambda: user_input('6', num_mapping_dict))
+        button6 = ttk.Button(self,  command=lambda: user_input('6', num_mapping_dict))
 
         button6.grid(row=2, column=2, padx=10, pady=10)
 
-        button7 = ttk.Button(self, text="7", command=lambda: user_input('7', num_mapping_dict))
+        button7 = ttk.Button(self, command=lambda: user_input('7', num_mapping_dict))
 
         button7.grid(row=3, column=0, padx=10, pady=10)
 
-        button8 = ttk.Button(self, text="8", command=lambda: user_input('8', num_mapping_dict))
+        button8 = ttk.Button(self, command=lambda: user_input('8', num_mapping_dict))
 
         button8.grid(row=3, column=1, padx=10, pady=10)
 
-        button9 = ttk.Button(self, text="9", command=lambda: user_input('9', num_mapping_dict))
+        button9 = ttk.Button(self, command=lambda: user_input('9', num_mapping_dict))
 
         button9.grid(row=3, column=2, padx=10, pady=10)
         # button to show frame 3 with text
@@ -526,7 +533,8 @@ def startCraft(play):
 
 
 
-
+def ChangeLabelText(m):
+    m.config(text = 'You pressed the button!')
 
 
 # Driver Code
