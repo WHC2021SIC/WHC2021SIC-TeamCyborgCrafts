@@ -324,7 +324,7 @@ Silicone mold that fits in your mouth
 
 - Carefully cut around the non-sealed bag so that it looks like Figure 4 & 5.
 
-Step 6: Connect Vibration Motors to Syntacts Board
+## Step 6: Connect Vibration Motors to Syntacts Board
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig20.png)
 
 - Attach female header pins to each wire. Be careful to not remove the power wire signifier during this step.
