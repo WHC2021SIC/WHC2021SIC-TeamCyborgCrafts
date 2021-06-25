@@ -139,7 +139,7 @@ VTTV is motivated by our interest in enabling users to craft tactile sensory exp
 
 # *Cyborg Crafts: Vibrotactile Tongue Vision (VTTV) - Design a Seven-Segment Vibrotactile Tongue Display to Augment Auditory and Visual Experiences
 
-[![VTTV video](https://img.youtube.com/watch?v=72ZQ3ZKOt7g.jpg)](https://www.youtube.com/watch?v=72ZQ3ZKOt7g "VTTV video")
+[![VTTV video](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png)](https://www.youtube.com/watch?v=72ZQ3ZKOt7g "VTTV video")
 
 ![Man with VTTV in Mouth](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig1.jpeg)
 
