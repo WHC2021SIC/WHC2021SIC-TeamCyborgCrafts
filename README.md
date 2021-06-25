@@ -137,36 +137,381 @@ VTTV is motivated by our interest in enabling users to craft tactile sensory exp
 
 ### Documentation
 
-#### Hardware
+# *Cyborg Crafts: Vibrotactile Tongue Vision (VTTV) - Design a Seven-Segment Vibrotactile Tongue Display to Augment Auditory and Visual Experiences
 
-The VTTV will use seven ERM coin cell vibration motors (Figure 1). The TDU will be interfaced with a controller and be encased in an easily sourceable, mouth-safe, substrate. The controller (Figure 2) will programmatically control seven individual haptic motors using a Raspberry Pi 4, syntacts board, Texas Instruments’ DRV2605L haptic motor drivers, an LCD screen, and potentiometers.
+![Man with VTTV in Mouth](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig1.jpeg)
 
-Figure 1
-<img alt="Overview of TDU" src="images/architecture/TDU.png" width="auto" height="auto"/>
+![Vibrotactile tongue vision system, also known as VT-TV. A seven-segment vibration motor lollipop connected to a controller with seven pressure sensors. Three examples of the vibration motor lollipop encased in different shaped gummy candy.](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig2.jpeg)
 
-Figure 2
-<img alt="Controller Picture" src="images/architecture/controller.png" width="auto" height="auto"/>
+*[Cyborg Crafts](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision) is a collaboration among five researchers at the University of Colorado, Boulder.
 
-##### Sensors wiring
+This project was submitted, and accepted to, the [IEEE World Haptics Conference 2021 Student Innovation Challenge](https://2021.worldhaptics.org/sic/). Very big thank you to the organizers for supplying the hardware!
 
-<!-- Feel free to remove or adapt the following explanation once you have understood its potential implications for your project. -->
+Video voice-over was done by [Vincent Haney](https://www.tiktok.com/@johnmayerlover3000?).
 
-We use the SparkFun Qwiic system to rapidly and remotely prototype sensors without much soldering. Qwiic uses the I2C communication protocol with addresses assigned per board model.
-Our Qwiic-based architectures may require:
-- 1 Qwiic MUX I2C multiplexer board per group identical sensor/board model (example: needed by 2 flex finger boards in the figures below)
-- 1 Qwiic ADC board per group of 4 sensors that are not implemented as Qwiic boards (example: needed by 4 FSRs sensors in the figures below)
+The Vibrotactile Tongue Vision (VTTV) system is an open-source programmable tongue display unit (TDU) that augments visual and auditory experiences through haptic feedback. VTTV is designed to be low floor and wide walls, enabling those without embedded systems skills to fabricate a TDU, controller, and craft tactile experiences easily. Experienced engineers, researchers, makers, and artists can hack VTTV to be an actuator in their projects. Cyborg Crafts will design, fabricate, and implement a TDU that will extend the user’s perception through a vibrotactile display. The project will also produce a controller to program haptic patterns directly to the VTTV system.
 
-<!-- Adapt this sensor architecture, covering all possible sensors accross all teams, to your team. -->
+TDUs typically use electrotactile stimulation to display information to the user. These systems produce sensations by generating voltage pulses from electrodes to the user’s tongue. Commercial TDU systems are closed source, prohibitively expensive, and compromise haptic resolution for user comfort. Cyborg Crafts proposes an alternative to electrotactile TDUs, a novel system that uses ERM motors for actuation. Cyborg Craft’s goal is to enable anyone to fabricate their own TDU using easily accessible materials with affordable off-the-shelf tools. The merit of this project is a replicable design with instructions on free-to-use online platforms such as Instructables. This will enable makers, students, artists, hackers, and researchers to fabricate and implement a TDU as an output device.
 
-![Sensor Configuration](images/architecture/sensor-configuration.svg)
+## What Do We Mean by “Craft Tactile Experiences”?
 
-Made with [drawio-desktop](https://github.com/jgraph/drawio-desktop/) (online version: [diagrams.net](https://www.diagrams.net/)).
+![Sensory crafting workflow. Experience, then, craft, then sense](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig3.png)
 
-<!-- see: https://www.diagrams.net/blog/embed-diagrams-github-markdown -->
+Crafting is the act of skillfully creating an object or an experience such as a story or narrative. There is a tradition of sharing crafted sensory experiences, from the sharing of a mixtape/playlist; to sharing photos from a vacation. These experiences are often passive and static; one cannot feel the explosions of fireworks in a photo or feel the crashing of tidal waves in a video. Vibrotactile Tongue Vision prioritizes the crafting of tactile actuation that can be connected to other sensory experiences. Similar to associating scents with specific experiences, one can create a tactile experience that will be associated with static experiences.
 
-#### Software
+Through the creation and dissemination of VTTV, we will introduce a new genre of human augmentation: **sensory crafting**. Sensory crafting is the crafting of a sensory experience to be shared from one human's sensory modality (e.g., visual, auditory) to another through a mediating device. Unlike previous devices where the user reacts to transduced signals from sensors, VTTV encourages users to reflect on their own sensory experiences and then program actuation to be shared. In addition to a sensory crafting device, VTTV is also an open-source, hackable tongue display unit that can be utilized as a haptic output for various research and maker applications.
 
-<!-- Describe your software components -->
+## Materials
+
+![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig4.png)
+
+**Hardware**:
+
+1 x Raspberry Pi 4
+
+1 x 16 GB SD Card
+
+1 x Octo Raspberry Pi Sound Card
+
+1 x Syntacts Amplifier (TI-TPA211A1-Q1) - V3.1
+
+4 x RCA to 3mm Cable
+
+2 x SparkFun QWIIC 12 Bit ADC - 4 Channel (ADS1015)
+
+7 x Force Sensitive Resistor 0.5”
+
+7 x LRA Vibrotactile actuators
+
+3 x QWIIC Cable - 200mm 30 AWG black silicone stranded-core wire
+
+**Software**:
+
+If you are pulling the Cyborg Crafts repository or imaging an SD card with the image file we provided you are all set to start sensory crafting!
+
+Python 3/Pycharm
+
+**Syntacts**
+
+Octo Audio Injector Sound Card
+
+ADS1015 Python package
+
+**Other Materials:**
+
+Soldering Iron
+
+Food vacuum sealer
+
+Vacuum sealer bags
+
+Hand-held bag sealer
+
+Drinking straw
+
+Baking chocolate or Gummies (or any moldable food)
+
+Silicone Mold that fits in your mouth
+
+## Hardware Wiring Diagram
+![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig5.png)
+
+Reference the above diagram as you're wiring your VTTV together.
+
+*Note that the Octo Sound Card is not shown in the image, only the output side RCA block. It is connected to the raspberry pi via the 40 pin connector. VTTV does not make use of the input side RCA block.
+
+## Step 1: Hardware Setup
+![VTTV Diagram](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig6.png)
+![Bottom of soldered ADS1015](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig7.png)
+
+- Insert the imaged SD card into the Raspberry Pi and connect a mouse, keyboard, monitor, and power supply.
+
+- Connect the Raspberry Pi 4 to the Octo Audio Injector Sound Card
+
+- Connect the Sparkfun QWIIC I2C Breakout on top of the Octo Audio Injector Sound Card as shown in the WHCSIC Guide
+
+- Change the I2C Address of each ADC from the default address of 0x48 to 0x4B and 0x49 (Figure 2). Follow along with the tutorial for trace cutting and solder jumper settings.
+
+- Connect the RCA to 3.5mm cables from the Octo Sound Card OUTPUT RCA block to the Syntacts board. See the hardware diagram above for further details. Where you connect the cables matters.
+
+- Connect a 5V power supply to the syntax board.
+
+- When your VTTV hardware is connected, you can connect each motor to the output of the syntax board.
+
+## Step 2: Wire and Connect the Seven Pressure Sensors
+
+![Pressure sensor hookup](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig8.png)
+
+- Solder a 3.3K resistor to the (-) terminal of each of the force-sensitive resistors. Then solder a wire for 3.3V and a wire for GND (Figure 1)
+
+- Connect each of the 7 ADC wires to the screw terminal on the QWIIC ADC breakouts. One will have four wires and one will have three.
+
+- Solder all 3.3V wires to the 3.3V rails of the QWIIC ADC breakouts
+
+- Solder all GND wires to the GND rails of the QWIIC ADC Breakouts
+
+- Daisy chain the QWIIC ADC Breakouts
+
+## Step 3: Build Your Tongue Display Unit (TDU)
+
+![VTTV tongue display unit](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig9.jpeg)
+
+In the following steps, we will describe how to make the tongue display unit for the VTTV.
+
+The materials needed for this unit is as follows:
+
+7 x [LRA Vibrotactile actuators](https://www.digikey.com/en/products/detail/jinlong-machinery-electronics-inc/G0825001D/10285885)
+
+Food vacuum sealer
+
+Vacuum sealer bags
+
+Hand-held bag sealer
+
+Drinking straw
+
+Baking chocolate or Gummies (or any moldable food)
+
+Silicone mold that fits in your mouth
+
+30 AWG black silicone stranded-core wire
+
+## Step 4: Prepare Vibration Motors
+
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig10.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig11.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig12.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig13.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig14.jpeg)
+- Solder wire leads to each wire from the motor to extend them (Figure 1). (Note: be generous with the length so that you have enough cable to fit through the straw, connect to the controller and reach your mouth).
+
+- After extending all seven of your LRA vibration motors, they should all look like Figure 2.
+
+- Now mark each wire (we use painter's tape or colored heat shrink) so that you can identify pairs of wires and which wire is power (red).
+
+- Add heat shrink to each lead to isolate (Figure 3). Repeat this for each motor.
+
+- Slip each wire through the center of a straw so that they begin to represent the final placement. For the seven-segment display, you want the vibration motors to be placed as the following pattern and Figure 4&5:
+     
+         *
+
+        * *
+
+         *
+
+        * *
+
+         *
+
+
+## Step 5: Vacuum & Seal the TDU
+
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig15.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig16.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig17.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig18.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig19.jpeg)
+
+- Arrange the motors so that they are in the correct orientation for a seven-segment display and place them into a vacuum seal bag. If you are having difficulties with keeping the motors in place, use the sticky back of the motors to arrange them while in the bag. At this step, the motors should look like Figure 1. The distance between each motor can vary depending on the user’s preference but we’ve found that around 1mm in distance to be sufficient (Figure 1).
+
+- Vacuum sealing isn’t necessary to make a VTTV, you can just heat seal them. The vacuum sealing helps keep the bag tight around the motors while heat sealing.
+
+- Place the cables and TDU inside the bag, then vacuum seal the bag (Figure 2).
+
+- Using the vacuum bag sealer, seal the bag as close to the motors as possible. Seal the straw as well (Figure 3).
+
+- Carefully cut around the non-sealed bag so that it looks like Figure 4 & 5.
+
+Step 6: Connect Vibration Motors to Syntacts Board
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig20.png)
+
+- Attach female header pins to each wire. Be careful to not remove the power wire signifier during this step.
+
+- Connect each motor as shown in the Figure 1 diagram & the hardware wiring diagram.
+
+## Step 7: Connect Syntacts
+
+- Connect a 5V/1A power supply to the Syntacts power terminal
+
+- Connect the (+) terminals of each motor to the (+) terminal on the Syntacts board
+
+- Connect the (-) terminals of each motor to the (-) terminal on the Syntacts board
+
+- Connect the output RCA breakout ribbon cable to the output terminal of the Octo Audio Injector sound card
+
+- Connect 4 RCA to 3mm cables from the RCA breakout to the 3.5mm input terminals of the Syntacts board
+
+## Step 8: Raspberry Pi Set Up and Software (Taken Directly From the WHC2021SIC Getting Started Guide)
+
+This section will help you setup hardware and software components of your WHC 2021 SIC kit.
+
+### Unpack and assemble hardware
+
+This section will help you setup hardware components of your WHC 2021 SIC kit.
+
+#### Raspberry Pi 4
+
+![rpi4](images/rpi4.jpeg)
+
+Make sure to hold the bare RPI board from its edges to avoid touching components.
+One you receive the RPI and the SD card, please burn Raspberry Pi OS to the Micro SD card using the card reader. Imager is available here: https://www.raspberrypi.org/software/
+
+#### Audio Injector Octo soundcard hat
+
+![octo](images/octo.jpeg)
+
+Stack Audio Injector Octo soundcard hat on GPIO header of RPI.
+![rpi4](images/rpi4_octo.jpeg)
+
+Connect at least the Output RCA breakout to the Audio Injector Octo soundcard hat.
+
+#### Syntacts board and actuators
+
+![syntacs](images/syntacs.jpeg)
+
+Define ideal wiring length based on your project setup, particularly depending on constraints from  the locations of actuators and of the rest of your system (both colocated? wearable?).
+
+Solder actuators, wires and connectors. 
+
+Connect:
+- actuators to Syntacts board
+- audio cables from Syntacts board to Audio Injector Octo soundcard hat
+- Supply power to the board by either the battery case or the USB cable (just use red and black cable, probably better to plug into a USB3.0 port)
+
+![octo](images/rpi4_octo_qwiic_4.jpeg)
+
+#### SparkFun Qwiic hat, boards and sensors
+
+![qwiic](images/qwiic_example.jpeg)
+
+Remove the black header protection from the top of the Audio Injector Octo soundcard hat.
+
+Stack your [SparkFun Qwiic HAT](https://www.sparkfun.com/products/14459) on top of the Audio Injector Octo soundcard hat.
+
+### Setup software configuration
+
+This section will help you setup software components of your WHC 2021 SIC kit.
+
+#### Raspberry Pi 4
+
+This section will let you setup your Raspberry Pi with a SD card reader and without the need of USB keyboard and mouse. 
+
+We tested this procedure with the Raspberry Pi OS (formerly Raspbian) distribution and this kernel (output from command `uname -a` on a terminal):
+`Linux raspberrypi 5.4.51-v7l+ #1333 SMP Mon Aug 10 16:51:40 BST 2020 armv7l GNU/Linux`
+
+This procedure is based on third-party tutorials such as: https://desertbot.io/blog/headless-raspberry-pi-4-lite-remote-desktop-upgrade
+
+##### Change or init your password
+
+TODO Add method by writing filesystem with SD card reader.
+
+If you are already logged in your Raspberry Pi, in a terminal, type/paste command `sudo passwd pi` then input your new password. Choose something else than the default ~~raspberry~~ password for increased security.
+
+##### Setup WiFi and SSH
+
+> The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.[1] Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. From: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
+
+Make sure your laptop/desktop and Raspberry Pi are on the same network.
+
+Enable WiFi and SSH by following this tutorial: https://desertbot.io/blog/headless-raspberry-pi-4-ssh-wifi-setup
+
+Highlight: to enable SSH, put a `ssh` file with no extension on boot partition:
+https://www.raspberrypi.org/documentation/remote-access/ssh/
+
+##### Setup VNC
+
+> In computing, Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. It transmits the keyboard and mouse events from one computer to another, relaying the graphical-screen updates back in the other direction, over a network. From: https://en.wikipedia.org/wiki/Virtual_Network_Computing
+
+This procedure is based on third-party tutorials such as: https://www.raspberrypi.org/documentation/remote-access/vnc/
+
+- install VNC Server on Raspberry Pi
+    - `sudo apt install realvnc-vnc-server realvnc-vnc-viewer
+    - `sudo raspi-config`
+      - `Interfacing Options > VNC / SSH`
+- determine the Raspberry Pi IP address:
+   - access your Wifi router admin panel and identify connected devices
+   - use network scanning tools, such as `nmap` for Linux debian/ubuntu systems (from: http://mitchtech.net/vnc-setup-on-raspberry-pi-from-ubuntu/)
+      - `sudo apt install nmap`
+      - `nmap -sV -p 22 192.168.2.1-255` (replace `192.168.2.1-255` with your network subnetwork and range)
+- download VNC Viewer from https://www.realvnc.com/en/connect/download/viewer/
+- install:
+   - for Linux debian/ubuntu systems: `sudo dpkg -i VNC-Viewer-6.20.529-Linux-x64.deb`
+
+##### Forward mouse and keyboard input from your laptop/desktop to your Raspberry Pi
+
+There are various ways of forwarding mouse and keyboard input from your laptop/desktop to your Raspberry Pi, see: https://raspberrypi.stackexchange.com/questions/4253/forward-mouse-and-keyboard-input-to-x-session
+
+We recommend barrier: https://github.com/debauchee/barrier
+
+#### Audio Injector Octo soundcard hat
+
+Perform **Manual setup** from: https://github.com/WHC2021SIC/Octo
+
+Automated setup is outdated and valid only for older kernels.
+
+#### Syntacts board and actuators
+
+##### Test and create audio signal pipelines with Pure Data
+
+> Pure Data (Pd) is a visual programming language developed by Miller Puckette in the 1990s for creating interactive computer music and multimedia works. From: https://en.wikipedia.org/wiki/Pure_Data
+
+Pure Data has been employed in the HCI and haptics communities, here are a few examples:
+- StereoHaptics by Ali Israr et al.: https://la.disneyresearch.com/publication/stereohaptics/
+- libhapiness by Julien Decaudin et al.: https://gitlab.inria.fr/Loki/happiness/libhappiness
+- WebAudioHaptics by Christian Frisson et al.: https://github.com/webaudiohaptics
+
+Install puredata from a terminal with: `sudo apt install puredata`.
+
+Test all vibrotactile channels independently by sending test signals (tone or noise) with puredata and its Test Audio and MIDI utility accessible from menu `Media`. 
+
+
+##### Explore the vibrotactile design space with the Syntacts Tactor Synthesizer 
+
+Explore the vibrotactile design space with the Syntacts Tactor Synthesizer by Evan Pezent et al.: https://github.com/WHC2021SIC/Syntacts
+
+##### Other tools for haptic and audio interaction design
+
+- Macaron by Oliver Schneider et al.: https://hapticdesign.github.io/macaron
+- VibViz by Hasti Seifi et al.: https://www.cs.ubc.ca/~seifi/VibViz/main.html
+
+
+#### SparkFun Qwiic hat, boards and sensors
+
+I2C function in RPI is disabled by default. Please follow this instruction to enable the configuration, and make sure to reboot.
+https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all#i2c-on-pi
+
+Sparkfun provides python programming on RPI tutorial: https://learn.sparkfun.com/tutorials/python-programming-tutorial-getting-started-with-the-raspberry-pi/configure-your-pi
+
+Depending on libraries you use, it might require you to upgrade pyhthon version to 3.0. Please check the current installed version `python --version` and change the version if necessary. (see Use Python 3 section in the sparkfun tutorial)
+
+Quick tip: want to know I2C address of your sensors? Here describes how to scan and find I2C devices on the bus using `i2cdetect -y 1`: https://learn.sparkfun.com/tutorials/qwiic-hat-for-raspberry-pi-hookup-guide
+
+## Step 9: Make Your Controller Housing
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig21.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig22.jpeg)
+
+
+This is where you get to be creative! Design your controller however you want! For the controller shown above we just found a metal box that was laying around and prettied it up with cardboard and buttons made out of googly eyes. Another member of our team glued her pressure sensors to a felt mat. Design it however will make you feel more creative.
+
+## Step 10: Embedding the TDU in Candy
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig23.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig24.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig25.jpeg)
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig26.jpeg)
+
+Cyborg Crafts has also experimented with encasing the tongue display unit in various types of chocolates and gummies with great success. While they do dampen some of the haptic feedback from the motors, they increase the crafting aspect by enabling users to share taste, as well as tactile, crafted experiences!
+
+We haven't quite formed a system for encasing the TDU, but here's what we've had success with:
+
+[Here are](https://www.amazon.com/gp/product/B07N3WPHV9/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) the molds that we've had the most successes with.
+
+We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 1, 2, & 3) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 4). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
+
+## Step 11: Done!
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig27.jpeg)
+
+You now have your very own VTTV, enjoy sensory crafting!
+
 
 
 ## Acknowledgements
