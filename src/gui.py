@@ -13,8 +13,14 @@ import os
 import Adafruit_ADS1x15
 import threading
 from PIL import Image, ImageTk
+import time
+import random
+
+
+start = time.time()
 
 LARGEFONT = ("Verdana", 30)
+SMALLFONT = ("Verdana", 10)
 
 
 GAIN = 1
@@ -314,6 +320,9 @@ class Train2(tk.Frame):
 class Games(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        label = ttk.Label(self, text="Games", font=LARGEFONT)
+        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+
 
         # button to show frame 2 with text
         # layout2
@@ -322,7 +331,7 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button1.grid(row=1, column=1, padx=10, pady=10)
+        button1.grid(row=1, column=1, padx=120, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -331,14 +340,14 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=2, column=1, padx=10, pady=10)
+        button2.grid(row=2, column=1, padx=120, pady=10)
 
         button3 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row=3, column=1, padx=10, pady=10)
+        button3.grid(row=3, column=1, padx=120, pady=10)
 
 
 class Game1(tk.Frame):
@@ -353,6 +362,13 @@ class Game1(tk.Frame):
         label = ttk.Label(self, text="Whack A Mole", font=LARGEFONT)
         label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
 
+        label1 = ttk.Label(self, text="Hits: ", font=SMALLFONT)
+        label1.grid(row=1, column=0, padx=10, pady=10, columnspan=1)
+        
+        
+        hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
+        hit_counter.grid(row=1, column=2, padx=10, pady=10)
+        
         self.btn = [0 for x in range(9)]
 
         # for x in range(8):
@@ -361,48 +377,181 @@ class Game1(tk.Frame):
         #     self.btn[x].grid(column=x, row=1, padx=10, pady=10)
 
 
-        button1 = ttk.Button(self, command=lambda:ChangeLabelText(button1))
-        button1.grid(row=1, column=0, padx=10, pady=10)
+        button1 = ttk.Button(self, command=lambda:put_down_mole(0,False))
+        button1.grid(row=2, column=0, padx=10, pady=10)
 
-        button2 = ttk.Button(self,command=lambda: user_input('2', num_mapping_dict))
+        button2 = ttk.Button(self,command=lambda:put_down_mole(1,False))
 
-        button2.grid(row=1, column=1, padx=10, pady=10)
+        button2.grid(row=2, column=1, padx=10, pady=10)
 
-        button3 = ttk.Button(self, command=lambda: user_input('3', num_mapping_dict))
+        button3 = ttk.Button(self, command=lambda:put_down_mole(2,False))
 
-        button3.grid(row=1, column=2, padx=10, pady=10)
+        button3.grid(row=2, column=2, padx=10, pady=10)
 
-        button4 = ttk.Button(self, command=lambda: user_input('4', num_mapping_dict))
+        button4 = ttk.Button(self, command=lambda:put_down_mole(3,False))
 
-        button4.grid(row=2, column=0, padx=10, pady=10)
+        button4.grid(row=3, column=0, padx=10, pady=10)
 
-        button5 = ttk.Button(self,  command=lambda: user_input('5', num_mapping_dict))
+        button5 = ttk.Button(self,  command=lambda:put_down_mole(4,False))
 
-        button5.grid(row=2, column=1, padx=10, pady=10)
+        button5.grid(row=3, column=1, padx=10, pady=10)
 
-        button6 = ttk.Button(self,  command=lambda: user_input('6', num_mapping_dict))
+        button6 = ttk.Button(self,  command=lambda:put_down_mole(5,False))
 
-        button6.grid(row=2, column=2, padx=10, pady=10)
+        button6.grid(row=3, column=2, padx=10, pady=10)
 
-        button7 = ttk.Button(self, command=lambda: user_input('7', num_mapping_dict))
+        button7 = ttk.Button(self, command=lambda:put_down_mole(6,False))
 
-        button7.grid(row=3, column=0, padx=10, pady=10)
+        button7.grid(row=4, column=0, padx=10, pady=10)
 
-        button8 = ttk.Button(self, command=lambda: user_input('8', num_mapping_dict))
+        button8 = ttk.Button(self, command=lambda:put_down_mole(7,False))
 
-        button8.grid(row=3, column=1, padx=10, pady=10)
+        button8.grid(row=4, column=1, padx=10, pady=10)
 
-        button9 = ttk.Button(self, command=lambda: user_input('9', num_mapping_dict))
+        button9 = ttk.Button(self, command=lambda:put_down_mole(8,False))
 
-        button9.grid(row=3, column=2, padx=10, pady=10)
+        button9.grid(row=4, column=2, padx=10, pady=10)
         # button to show frame 3 with text
         # layout3
+        
+        start_button = ttk.Button(self, text="Start",
+                              command=lambda: startWhack())
+
+        # putting the button in its place by
+        # using grid
+        start_button.grid(row=5, column=1, padx=10, pady=10)
+        
         button10 = ttk.Button(self, text="Home",
                               command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button10.grid(row=4, column=1, padx=10, pady=10)
+        button10.grid(row=6, column=1, padx=10, pady=10)
+        
+        
+        
+        time_down = []
+        button_names = [button1,button2,button3,button4,button5,button6,button7,button8,button9]
+        time_down = []
+        channel_active = [0,0,0,0,0,0,0,0,0]
+        missed_count = 0
+        self.game_is_running = False
+        def startWhack():
+            if start_button['text'] == 'Start':
+                # for i in range(9):
+                #      ChangeLabelText(button_names[i], " ")
+                ChangeLabelText(start_button, "Stop")
+                active_mole = random.randint(0,8)
+                print(active_mole)
+                self.game_is_running = True
+                button_names[active_mole].after(1000,
+                                                        pop_up_mole(active_mole, 0))
+                #ChangeLabelText(button_names[active_mole], "x")
+            
+                for i in range(9):
+                    time_down.append(random.randint(1000,10000))
+                    
+                self.after(time_down[0],lambda:pop_up_mole(0, 0))
+                self.after(time_down[1],lambda:pop_up_mole(1, 0))
+                self.after(time_down[2],lambda:pop_up_mole(2, 0))
+                self.after(time_down[3],lambda:pop_up_mole(3, 0))
+                self.after(time_down[4],lambda:pop_up_mole(4, 0))
+                self.after(time_down[5],lambda:pop_up_mole(5, 0))
+                self.after(time_down[6],lambda:pop_up_mole(6, 0))
+                self.after(time_down[7],lambda:pop_up_mole(7, 0))
+                self.after(time_down[8],lambda:pop_up_mole(8, 0))
+                    
+                print(time_down)
+                
+               
+            
+            else:  # The game is running, so stop the game and reset everything
+                start_button['text'] = "Start"
+                self.game_is_running = False
+
+                
+        def put_down_mole(m, timer_expired):
+            
+            if self.game_is_running:
+                the_label = button_names[m]
+                if timer_expired == False:
+                    if the_label['text'] == 'X':
+                      # Make the mole invisible
+                          hit_counter['text'] = str(int(hit_counter['text']) + 1)
+                      # Set a call to pop up the mole in the future
+                
+                # ChangeLabelText(the_label, " ")
+                # if timer_expired:
+                #     # The mole is going down before it was clicked on, so update the miss counter
+                #     self.miss_counter['text'] = str(int(self.miss_counter['text']) + 1)
+                    # The timer did not expire, so manually stop the timer
+          
+                
+                ChangeLabelText(the_label, " ")
+                channel_active[m] =0
+                time_down[m] = random.randint(1000,
+                                        3000)
+                print(time_down[m])
+                
+                self.after(time_down[m], lambda:pop_up_mole(m,time_down[m]))
+                # button_names[m].after(0,
+                #                                         ChangeLabelText(the_label, " "))
+                # Remember the timer object so it can be canceled later, if need be
+       
+
+    
+        def pop_up_mole(m, time_hold):
+            # Show the mole on the screen
+            the_label = button_names[m]
+         
+            if self.game_is_running:
+                 # Create a base sine wave for motors
+                channel_active[m] = 1
+                base_wave = s.Sine(FREQUENCY)
+                sequence = base_wave * s.Envelope(SAMPLE_PERIOD, 1)
+                
+                global sess
+                sess.open()
+                for channel in range(9):
+                    if channel_active[channel]:
+                        print("Would play sequence for channel: " + str(channel))
+                        sess.play(channel, sequence)
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                sleep(sequence.length*.9)
+                # Now, we stop the Signal on channel 0 (sig1 will have played for 3 seconds)
+                sess.close()
+                            # Wait while sequence plays for SAMPLE_PERIOD seconds
+                
+            # Wait while sequence plays for SAMPLE_PERIOD seconds
+                #sleep(sequence.length * .9)
+                 # while 1:
+                time_up = random.randint(4000,10000)
+                self.after(10, lambda: ChangeLabelText(the_label, "X"))
+                
+                # mole_input(sequence, m, time_up)
+                
+                
+            
+                # Set a call to make the mole disappear in the future
+                
+                self.after(time_up, lambda:put_down_mole(m, True))
+                
+            
+
+            
+            
+            
+            # button_names[active_mole].after(time_down[active_mole],
+            #                                         ChangeLabelText(button_names[active_mole], " "), button_names[active_mole])
+        #     for i in range(random.randint(0,5)):
+        #         newMole(i)
+        #     print(active_mole)
+        
+        # def newMole(m):
+        #     ChangeLabelText(button_names[m], "x")
+        #     sleep(random.random()*3)
+        #     ChangeLabelText(button_names[m], " ")
 
 
 class Game2(tk.Frame):
@@ -411,7 +560,7 @@ class Game2(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text="Simon Vibes", font=LARGEFONT)
+        label = ttk.Label(self, text="Simon Vibes \n(Coming Soon)", font=LARGEFONT)
         label.grid(row=0, column=0, padx=10, pady=10)
 
         # button to show frame 3 with text
@@ -464,6 +613,15 @@ def user_input(value, char_mapping_dict):
     except ValueError:
        print("invalid input")
     sess.close()
+    
+def mole_input(seq, m, time_up):
+    global sess
+    sess.open()
+    sess.play(m, seq)
+# Wait while sequence plays for SAMPLE_PERIOD seconds
+    sleep(0.2)
+    sess.close()
+
 
 kill_thread = True
 thread = None
@@ -533,9 +691,12 @@ def startCraft(play):
 
 
 
-def ChangeLabelText(m):
-    m.config(text = 'You pressed the button!')
+def ChangeLabelText(m,buttonText):
+    m.config(text = buttonText)
+    print("popping up")
 
+
+    
 
 # Driver Code
 app = tkinterApp()
