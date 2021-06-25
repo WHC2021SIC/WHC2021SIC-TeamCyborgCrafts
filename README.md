@@ -165,7 +165,7 @@ Through the creation and dissemination of VTTV, we will introduce a new genre of
 
 ## Materials
 
-![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig4.png)
+![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig4.jpeg)
 
 **Hardware**:
 
