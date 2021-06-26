@@ -115,6 +115,7 @@ Once this documentation becomes very comprehensive, the main file can be split i
     + [Introduction](#introduction-1)
     + [What Do We Mean by “Craft Tactile Experiences”?](#sens)
     + [Contributing](#contributing)
+    + [Other Documentation Platforms](#docs)
     + [Materials](#materials)
       - [Hardware](#hardware)
       - [Software](#software)
@@ -189,6 +190,13 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update as appropriate!
+
+<a name="docs"></a>
+## Other Documentation Platforms
+Support this project on the following documentation platforms:
+[Instructables](https://www.instructables.com/Cyborg-Crafts-Vibrotactile-Tongue-Vision-VTTV-Desi/)
+[Make:Projects](https://makeprojects.com/project/cyborg-crafts-vibrotactile-tongue-vision-vttv---seven-segment-vibrotactile-tongue-display)
+[Hackster](https://www.hackster.io/CyborgCrafts/cyborg-crafts-vibrotactile-tongue-vision-a98190)
 
 ---------------
 
