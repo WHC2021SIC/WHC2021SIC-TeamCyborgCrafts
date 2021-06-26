@@ -113,6 +113,7 @@ Once this documentation becomes very comprehensive, the main file can be split i
 - [Motivation](#motivation)
   * [Documentation](#documentation)
     + [Introduction](#introduction)
+    + [Sensory Crafting](#What Do We Mean by “Craft Tactile Experiences”?)
     + [Hardware](#hardware)
       - [Sensors wiring](#sensors-wiring)
     + [Software](#software)
