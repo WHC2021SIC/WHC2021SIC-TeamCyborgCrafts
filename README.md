@@ -116,16 +116,23 @@ Once this documentation becomes very comprehensive, the main file can be split i
     + [What Do We Mean by “Craft Tactile Experiences”?](#sens)
     + [Contributing](#contributing)
     + [Materials](#materials)
-      -[Hardware](#hardware)
-      -[Software](#software)
-      -[Syntacts](#syntacts)
-      -[Other Materals](#mats)
-
-
-
-    + [Hardware](#hardware)
-      - [Sensors wiring](#sensors-wiring)
-    + [Software](#software)
+      - [Hardware](#hardware)
+      - [Software](#software)
+      - [Syntacts](#syntacts)
+      - [Other Materals](#mats)
+    + [Hardware Wiring Diagram](#wire)
+    + [Step 1: Hardware Steup](#S1)
+    + [Step 2: Wire and Connect the Seven Pressure Sensors](#S2)
+    + [Step 3: Build your Tongue Display Unit (TDU)](#S3)
+      - [Step 4: Prepare Vibration Motors](#S4)
+      - [Step 5: Vacuum & Seal the TDU](#S5)
+      - [Step 6: Connect Vibration Motors to Syntacts Board](#S6)
+    + [Step 7: Connect Syntacts](#S7)
+    + [Step 8: Raspberry Pi Set Up and Software](#S8)
+    + [Step 9: Make Your Controller Housing](#S9)
+    + [Step 10: Embedding the TDU in Candy](#S10)
+    + [Step 11: How to connect the GUI](#S11)
+    + [Step 12: Done!](#S12)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -244,6 +251,7 @@ Hollow drinking/lolipop straws (plenty of options available) * $6
 
 Total = $90
 
+<a name="wire"></a>
 ## Hardware Wiring Diagram
 ![Hardware materials laid out on a white background](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig5.png)
 
@@ -251,6 +259,7 @@ Reference the above diagram as you're wiring your VTTV together.
 
 *Note that the Octo Sound Card is not shown in the image, only the output side RCA block. It is connected to the raspberry pi via the 40 pin connector. VTTV does not make use of the input side RCA block.
 
+<a name="S1"></a>
 ## Step 1: Hardware Setup
 ![VTTV Diagram](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig6.png)
 ![Bottom of soldered ADS1015](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig7.png)
@@ -269,6 +278,7 @@ Reference the above diagram as you're wiring your VTTV together.
 
 - When your VTTV hardware is connected, you can connect each motor to the output of the syntax board.
 
+<a name="S2"></a>
 ## Step 2: Wire and Connect the Seven Pressure Sensors
 
 ![Pressure sensor hookup](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig8.png)
@@ -283,6 +293,7 @@ Reference the above diagram as you're wiring your VTTV together.
 
 - Daisy chain the QWIIC ADC Breakouts
 
+<a name="S3"></a>
 ## Step 3: Build Your Tongue Display Unit (TDU)
 
 ![VTTV tongue display unit](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig9.jpeg)
@@ -307,6 +318,7 @@ Silicone mold that fits in your mouth
 
 30 AWG black silicone stranded-core wire
 
+<a name="S4"></a>
 ## Step 4: Prepare Vibration Motors
 <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig10.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig11.jpeg" width ="400" />
 
@@ -335,6 +347,7 @@ Silicone mold that fits in your mouth
          *
 
 
+<a name="S5"></a>
 ## Step 5: Vacuum & Seal the TDU
 
 <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig15.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig16.jpeg" width ="400" />
@@ -353,6 +366,7 @@ Silicone mold that fits in your mouth
 
 - Carefully cut around the non-sealed bag so that it looks like Figure 4 & 5.
 
+<a name="S6"></a>
 ## Step 6: Connect Vibration Motors to Syntacts Board
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig20.png)
 
@@ -360,6 +374,7 @@ Silicone mold that fits in your mouth
 
 - Connect each motor as shown in the Figure 1 diagram & the hardware wiring diagram.
 
+<a name="S7"></a>
 ## Step 7: Connect Syntacts
 
 - Connect a 5V/1A power supply to the Syntacts power terminal
@@ -372,6 +387,7 @@ Silicone mold that fits in your mouth
 
 - Connect 4 RCA to 3mm cables from the RCA breakout to the 3.5mm input terminals of the Syntacts board
 
+<a name="S8"></a>
 ## Step 8: Raspberry Pi Set Up and Software (Taken Directly From the WHC2021SIC Getting Started Guide)
 
 ### Setup software configuration
@@ -477,6 +493,7 @@ Depending on libraries you use, it might require you to upgrade pyhthon version 
 
 Quick tip: want to know I2C address of your sensors? Here describes how to scan and find I2C devices on the bus using `i2cdetect -y 1`: https://learn.sparkfun.com/tutorials/qwiic-hat-for-raspberry-pi-hookup-guide
 
+<a name="S9"></a>
 ## Step 9: Make Your Controller Housing
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig21.jpeg)
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig22.jpeg)
@@ -484,6 +501,7 @@ Quick tip: want to know I2C address of your sensors? Here describes how to scan 
 
 This is where you get to be creative! Design your controller however you want! For the controller shown above we just found a metal box that was laying around and prettied it up with cardboard and buttons made out of googly eyes. Another member of our team glued her pressure sensors to a felt mat. Design it however will make you feel more creative.
 
+<a name="S10"></a>
 ## Step 10: Embedding the TDU in Candy
 <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig26.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig23.jpeg" width ="400" />
 
@@ -497,9 +515,11 @@ We haven't quite formed a system for encasing the TDU, but here's what we've had
 
 We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 2, 3, & 4) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 1). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
 
+<a name="S11"></a>
 ## Step 11: How to connect to the GUI
 Watch this video to learn how to connect a VTTV to the GUI: https://www.youtube.com/watch?v=kK3CzA-RoKw
 
+<a name="S12"></a>
 ## Step 12: Done!
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig27.jpeg)
 
