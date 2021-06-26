@@ -23,7 +23,7 @@ Find more information on her [website](https://sandrabae.github.io).
 
 #### Chris Hill
 
-<img alt="Name's picture" src="images/portraits/ChrisHill.jpeg" width="100px" height="auto"/>
+<img alt="Chris Hill's picture" src="images/portraits/ChrisHill.jpeg" width="100px" height="auto"/>
 
 Chris Hill is a Ph.D. student in Creative Technology and Design advised by Ann Eisenberg and Daniel Leithinger. He is a McNair Scholar, a Google CS Research Mentorship participant, and he received honorable mention in the 2020 Computing Research Association Outstanding Undergraduate Researcher awards. His research interests lie in human augmentation, sensory extension, transhumanism, biohacking, and educational technology. These interests have led to the development of open-source sensory extension and augmentation devices that he hopes will be replicated, accelerating scientific discovery and building stronger development communities in the field.
 
@@ -32,7 +32,7 @@ Find more information on his <!-- update pronouns--> [website](https://chrisnhil
 
 #### Casey Hunt
 
-<img alt="Name's picture" src="images/portraits/CaseyHunt.jpeg" width="100px" height="auto"/>
+<img alt="Casey Hunt's picture" src="images/portraits/CaseyHunt.jpeg" width="100px" height="auto"/>
 
 Casey Hunt is an ACS Certified Biochemist with a Bachelor’s degree from the University of Utah. After several years of work in environmental and personnel monitoring for the immuno-oncology startup NextCure, Casey became fascinated by the myriad of sensors in the lab designed to track personnel (and microbe) activity—as well as the psychosocial factors at play in this ubiquitous sensing environment. For the last two years, she has designed novel sensing techniques for ubiquitous computing applications as a Master’s student in Creative Technology and Design and a member of the THING Lab at the CU ATLAS Institute. Casey is especially motivated by the need for haptic systems to facilitate remote collaboration and connection.
 
@@ -41,7 +41,7 @@ Find more information on her <!-- update pronouns--> [website](https://caseyhunt
 
 #### Netta Ofer
 
-<img alt="Name's picture" src="images/portraits/NettaOfer.jpeg" width="100px" height="auto"/>
+<img alt="Netta Ofer's picture" src="images/portraits/NettaOfer.jpeg" width="100px" height="auto"/>
 
 Netta Ofer is a Research Master's student in the Living Matter Lab at the ATLAS Institute. Her background is in media studies, human-computer interaction (HCI), and interaction design from the Media Innovation Lab (milab) at IDC Herzliya. Netta's work has focused on how coding can create creative and personally-meaningful opportunities for children, specifically by bridging the digital and physical worlds. Today, her design research aims to discuss the relationship between the designed and natural world, and the human body from a speculative and critical lens.
 
@@ -49,7 +49,7 @@ Netta Ofer is a Research Master's student in the Living Matter Lab at the ATLAS 
 
 #### Mary West
 
-<img alt="Name's picture" src="images/portraits/MaryWest.jpeg" width="100px" height="auto"/>
+<img alt="Mary West's picture" src="images/portraits/MaryWest.jpeg" width="100px" height="auto"/>
 
 Mary Etta West completed her Bachelor of Science in Electrical Engineering from the University of Nevada Las Vegas in 2015. She went on to spend five years in the industry inventing and designing products and tools for SparkFun Electronics and Boulder Engineering Studio. She is currently in her second year as a Ph.D. student in Computer Science at the University of Colorado Boulder focusing on wearables, human-computer interaction and integration, physical computing, robotics, and data physicalization. She is advised by Danielle Szafir, Ben Shapiro, and Joel Swanson.
 
@@ -61,7 +61,7 @@ Find more information on her <!-- update pronouns--> [website](https://).
 <!-- Uncomment this section title and add a #### Name subsection if your team appointed an advisor. -->
 #### Daniel Leithinger
 
-<img alt="Sandra Bae's picture" src="images/portraits/DanielLeithinger.jpeg" width="100px" height="auto"/>
+<img alt="Daniel Leithinger's picture" src="images/portraits/DanielLeithinger.jpeg" width="100px" height="auto"/>
 
 Daniel Leithinger, assistant professor (ATLAS Institute & Computer Science) creates shape-changing human-computer interfaces that push digital information past the boundaries of flat displays, and into the real world. Motivated by the belief that computers must embrace the dexterity and expressiveness of the human body, his interfaces allow users to touch, grasp and deform data physically. Daniel received his Ph.D. at the MIT Media Lab in 2015. His academic publications have been published at ACM UIST, TEI, and CHI conferences, and he has received design awards from Fast Company, Red Dot, and IDEA. Projects like "inFORM" have been exhibited at the Cooper Hewitt Design Museum, Ars Electronica Museum, and the Milan Design Week.
 
