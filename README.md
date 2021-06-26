@@ -112,6 +112,7 @@ Once this documentation becomes very comprehensive, the main file can be split i
 - [Introduction](#introduction)
 - [Motivation](#motivation)
   * [Documentation](#documentation)
+    + [Introduction] (#introduction)
     + [Hardware](#hardware)
       - [Sensors wiring](#sensors-wiring)
     + [Software](#software)
@@ -147,6 +148,7 @@ VTTV is motivated by our interest in enabling users to craft tactile sensory exp
 
 *[Cyborg Crafts](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png) is a collaboration among five researchers at the University of Colorado, Boulder.
 
+## Introduction
 
 This project was submitted, and accepted to, the [IEEE World Haptics Conference 2021 Student Innovation Challenge](https://2021.worldhaptics.org/sic/). Very big thank you to the organizers for supplying the hardware!
 
