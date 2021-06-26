@@ -195,7 +195,9 @@ Please make sure to update as appropriate!
 ## Other Documentation Platforms
 Support this project on the following documentation platforms:
 [Instructables](https://www.instructables.com/Cyborg-Crafts-Vibrotactile-Tongue-Vision-VTTV-Desi/)
+
 [Make:Projects](https://makeprojects.com/project/cyborg-crafts-vibrotactile-tongue-vision-vttv---seven-segment-vibrotactile-tongue-display)
+
 [Hackster](https://www.hackster.io/CyborgCrafts/cyborg-crafts-vibrotactile-tongue-vision-a98190)
 
 ---------------
