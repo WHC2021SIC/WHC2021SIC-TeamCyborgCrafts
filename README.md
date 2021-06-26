@@ -237,6 +237,7 @@ ADS1015 Python package
 
 <a name="mats"></a>
 **Other Materials:**
+[Heat shrink](https://www.amazon.com/Ginsco-580-pcs-Assorted-Sleeving/dp/B01MFA3OFA/ref=sr_1_4?dchild=1&keywords=heat+shrink&qid=1624685739&sr=8-4) * $7
 
 [Soldering Iron](https://www.adafruit.com/product/3685) * $20
 
@@ -252,7 +253,7 @@ Hollow drinking/lolipop straws (plenty of options available) * $6
 
 [Silicone Mold](https://www.amazon.com/gp/product/B07N3WPHV9/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) (that fits in your mouth) * $14
 
-Total = $90
+Total = $97
 
 <a name="wire"></a>
 ## Hardware Wiring Diagram
