@@ -196,6 +196,7 @@ Please make sure to update as appropriate!
 
 ![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig4.jpeg)
 
+<a name="hardware"></a>
 **Hardware**:
 
 1 x [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) * $35
@@ -220,12 +221,14 @@ Please make sure to update as appropriate!
 
 Total = $246.69 + Syntacts amplifier
 
+<a name="software"></a>
 **Software**:
 
 If you are pulling the [Cyborg Crafts repository](https://github.com/ADataDate/Cyborg-Crafts-VTTV/wiki) or imaging an SD card with the image file we provided you are all set to start sensory crafting!
 
 Python 3/Pycharm
 
+<a name="syntacts"></a>
 **Syntacts**
 
 Octo Audio Injector Sound Card
