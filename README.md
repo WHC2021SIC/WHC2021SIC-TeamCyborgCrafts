@@ -114,6 +114,15 @@ Once this documentation becomes very comprehensive, the main file can be split i
   * [Documentation](#documentation)
     + [Introduction](#introduction-1)
     + [What Do We Mean by “Craft Tactile Experiences”?](#sens)
+    + [Contributing](#contributing)
+    + [Materials](#materials)
+      -[Hardware](#hardware)
+      -[Software](#software)
+      -[Syntacts](#syntacts)
+      -[Other Materals](#mats)
+
+
+
     + [Hardware](#hardware)
       - [Sensors wiring](#sensors-wiring)
     + [Software](#software)
@@ -216,6 +225,7 @@ Octo Audio Injector Sound Card
 
 ADS1015 Python package
 
+<a name="mats"></a>
 **Other Materials:**
 
 [Soldering Iron](https://www.adafruit.com/product/3685) * $20
