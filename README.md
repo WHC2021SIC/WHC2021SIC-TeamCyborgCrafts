@@ -112,7 +112,7 @@ Once this documentation becomes very comprehensive, the main file can be split i
 - [Introduction](#introduction)
 - [Motivation](#motivation)
   * [Documentation](#documentation)
-    + [Introduction] (#introduction)
+    + [Introduction](#introduction)
     + [Hardware](#hardware)
       - [Sensors wiring](#sensors-wiring)
     + [Software](#software)
