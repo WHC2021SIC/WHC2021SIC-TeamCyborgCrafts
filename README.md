@@ -124,7 +124,7 @@ Find more information on her [website](https://sites.usc.edu/culbertson/).
     + [Step 8: Raspberry Pi Set Up and Software](#S8)
     + [Step 9: Make Your Controller Housing](#S9)
     + [Step 10: Embedding the TDU in Candy](#S10)
-    + [Step 11: How to connect the GUI](#S11)
+    + [Step 11: How to Connect the GUI](#S11)
     + [Step 12: Done! :tada:](#S12)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -525,7 +525,7 @@ We haven't quite formed a system for encasing the TDU, but here's what we've had
 We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 2, 3, & 4) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 1). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
 
 <a name="S11"></a>
-## Step 11: How to connect to the GUI
+## Step 11: How to Connect to the GUI
 Watch this video to learn how to connect a VTTV to the GUI: https://www.youtube.com/watch?v=kK3CzA-RoKw
 
 <a name="S12"></a>
