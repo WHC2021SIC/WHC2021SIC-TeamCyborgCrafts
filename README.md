@@ -113,7 +113,7 @@ Once this documentation becomes very comprehensive, the main file can be split i
 - [Motivation](#motivation)
   * [Documentation](#documentation)
     + [Introduction](#introduction-1)
-    + [Sensory Crafting](#sensory-crafting”)
+    + [What Do We Mean by “Craft Tactile Experiences”?](#sens”)
     + [Hardware](#hardware)
       - [Sensors wiring](#sensors-wiring)
     + [Software](#software)
@@ -159,7 +159,8 @@ The Vibrotactile Tongue Vision (VTTV) system is an open-source programmable tong
 
 TDUs typically use electrotactile stimulation to display information to the user. These systems produce sensations by generating voltage pulses from electrodes to the user’s tongue. Commercial TDU systems are closed source, prohibitively expensive, and compromise haptic resolution for user comfort. Cyborg Crafts proposes an alternative to electrotactile TDUs, a novel system that uses ERM motors for actuation. Cyborg Craft’s goal is to enable anyone to fabricate their own TDU using easily accessible materials with affordable off-the-shelf tools. The merit of this project is a replicable design with instructions on free-to-use online platforms such as Instructables. This will enable makers, students, artists, hackers, and researchers to fabricate and implement a TDU as an output device.
 
-## Sensory Crafting
+<a name = "sens"></a>
+## What Do We Mean by “Craft Tactile Experiences”?
 
 ![Sensory crafting workflow. Experience, then, craft, then sense](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig3.png)
 
