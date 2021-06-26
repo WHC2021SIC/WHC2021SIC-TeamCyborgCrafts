@@ -154,9 +154,9 @@ VTTV is motivated by our interest in enabling users to craft tactile sensory exp
 
 [![VTTV video](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png)](https://www.youtube.com/watch?v=72ZQ3ZKOt7g "VTTV video")
 
-![Man with VTTV in Mouth](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig1.jpeg)
-
 ![Vibrotactile tongue vision system, also known as VT-TV. A seven-segment vibration motor lollipop connected to a controller with seven pressure sensors. Three examples of the vibration motor lollipop encased in different shaped gummy candy.](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig2.jpeg)
+
+![Man with VTTV in Mouth](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig1.jpeg)
 
 *[Cyborg Crafts](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png) is a collaboration among five researchers at the University of Colorado, Boulder.
 
