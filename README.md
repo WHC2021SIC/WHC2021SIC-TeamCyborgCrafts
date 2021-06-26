@@ -1,10 +1,10 @@
-# WHC2021SIC Project Template
+# *Cyborg Crafts: Vibrotactile Tongue Vision (VTTV)
 
-<!-- Replace Project Template by your team name in title and description -->
+*[Cyborg Crafts](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision) is a collaboration among five researchers at the University of Colorado, Boulder.
 
-Project Template for the IEEE World Haptics Conference 2021 Student Innovation Challenge
+### Cyborg Crafts: Vibrotactile Tongue Vision (VTTV) is a seven-segment vibrotactile tongue display that enables users to augment auditory and visual experiences through haptics.
 
-https://2021.worldhaptics.org/sic/
+This project was submitted, and accepted to, the [IEEE World Haptics Conference 2021 Student Innovation Challenge](https://2021.worldhaptics.org/sic/). Very big thank you to the organizers for supplying the hardware!
 
 ## Authors
 
