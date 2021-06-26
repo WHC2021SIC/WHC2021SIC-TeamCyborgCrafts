@@ -145,7 +145,8 @@ VTTV is motivated by our interest in enabling users to craft tactile sensory exp
 
 ![Vibrotactile tongue vision system, also known as VT-TV. A seven-segment vibration motor lollipop connected to a controller with seven pressure sensors. Three examples of the vibration motor lollipop encased in different shaped gummy candy.](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/Fig2.jpeg)
 
-*[Cyborg Crafts](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision) is a collaboration among five researchers at the University of Colorado, Boulder.
+*[Cyborg Crafts](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png) is a collaboration among five researchers at the University of Colorado, Boulder.
+
 
 This project was submitted, and accepted to, the [IEEE World Haptics Conference 2021 Student Innovation Challenge](https://2021.worldhaptics.org/sic/). Very big thank you to the organizers for supplying the hardware!
 
@@ -287,12 +288,12 @@ Silicone mold that fits in your mouth
 30 AWG black silicone stranded-core wire
 
 ## Step 4: Prepare Vibration Motors
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig10.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig11.jpeg" width ="400" />
 
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig10.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig11.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig12.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig13.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig14.jpeg)
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig12.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig13.jpeg" width ="400" />
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig14.jpeg" width ="400" />
+
 - Solder wire leads to each wire from the motor to extend them (Figure 1). (Note: be generous with the length so that you have enough cable to fit through the straw, connect to the controller and reach your mouth).
 
 - After extending all seven of your LRA vibration motors, they should all look like Figure 2.
@@ -316,11 +317,11 @@ Silicone mold that fits in your mouth
 
 ## Step 5: Vacuum & Seal the TDU
 
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig15.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig16.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig17.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig18.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig19.jpeg)
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig15.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig16.jpeg" width ="400" />
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig17.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig18.jpeg" width ="400" />
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig19.jpeg" width ="400" /> 
 
 - Arrange the motors so that they are in the correct orientation for a seven-segment display and place them into a vacuum seal bag. If you are having difficulties with keeping the motors in place, use the sticky back of the motors to arrange them while in the bag. At this step, the motors should look like Figure 1. The distance between each motor can vary depending on the user’s preference but we’ve found that around 1mm in distance to be sufficient (Figure 1).
 
@@ -504,10 +505,9 @@ Quick tip: want to know I2C address of your sensors? Here describes how to scan 
 This is where you get to be creative! Design your controller however you want! For the controller shown above we just found a metal box that was laying around and prettied it up with cardboard and buttons made out of googly eyes. Another member of our team glued her pressure sensors to a felt mat. Design it however will make you feel more creative.
 
 ## Step 10: Embedding the TDU in Candy
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig23.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig24.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig25.jpeg)
-![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig26.jpeg)
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig26.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig23.jpeg" width ="400" />
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig25.jpeg" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig24.jpeg" width ="400" />
 
 Cyborg Crafts has also experimented with encasing the tongue display unit in various types of chocolates and gummies with great success. While they do dampen some of the haptic feedback from the motors, they increase the crafting aspect by enabling users to share taste, as well as tactile, crafted experiences!
 
@@ -515,7 +515,7 @@ We haven't quite formed a system for encasing the TDU, but here's what we've had
 
 [Here are](https://www.amazon.com/gp/product/B07N3WPHV9/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) the molds that we've had the most successes with.
 
-We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 1, 2, & 3) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 4). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
+We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 2, 3, & 4) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 1). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
 
 ## Step 11: How to connect to the GUI
 Watch this video to learn how to connect a VTTV to the GUI: https://www.youtube.com/watch?v=kK3CzA-RoKw
