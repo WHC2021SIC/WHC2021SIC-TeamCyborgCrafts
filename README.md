@@ -103,7 +103,7 @@ Find more information on her [website](https://sites.usc.edu/culbertson/).
 - [Abstract](#abstract)
 - [Introduction](#introduction)
 - [Motivation](#motivation)
-- [Documentation](#documentation)
+- [**Documentation**](#documentation)
     + [Introduction](#introduction-1)
     + [What Do We Mean by “Craft Tactile Experiences”?](#sens)
     + [Contributing](#contributing)
