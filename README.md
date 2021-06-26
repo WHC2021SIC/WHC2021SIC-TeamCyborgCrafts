@@ -354,54 +354,14 @@ Silicone mold that fits in your mouth
 
 ## Step 8: Raspberry Pi Set Up and Software (Taken Directly From the WHC2021SIC Getting Started Guide)
 
-This section will help you setup hardware and software components of your WHC 2021 SIC kit.
-
-### Unpack and assemble hardware
-
-This section will help you setup hardware components of your WHC 2021 SIC kit.
-
-#### Raspberry Pi 4
-
-![rpi4](images/rpi4.jpeg)
-
-Make sure to hold the bare RPI board from its edges to avoid touching components.
-One you receive the RPI and the SD card, please burn Raspberry Pi OS to the Micro SD card using the card reader. Imager is available here: https://www.raspberrypi.org/software/
-
-#### Audio Injector Octo soundcard hat
-
-![octo](images/octo.jpeg)
-
-Stack Audio Injector Octo soundcard hat on GPIO header of RPI.
-![rpi4](images/rpi4_octo.jpeg)
-
-Connect at least the Output RCA breakout to the Audio Injector Octo soundcard hat.
-
-#### Syntacts board and actuators
-
-![syntacs](images/syntacs.jpeg)
-
-Define ideal wiring length based on your project setup, particularly depending on constraints from  the locations of actuators and of the rest of your system (both colocated? wearable?).
-
-Solder actuators, wires and connectors. 
-
-Connect:
-- actuators to Syntacts board
-- audio cables from Syntacts board to Audio Injector Octo soundcard hat
-- Supply power to the board by either the battery case or the USB cable (just use red and black cable, probably better to plug into a USB3.0 port)
-
-![octo](images/rpi4_octo_qwiic_4.jpeg)
-
-#### SparkFun Qwiic hat, boards and sensors
-
-![qwiic](images/qwiic_example.jpeg)
-
-Remove the black header protection from the top of the Audio Injector Octo soundcard hat.
-
-Stack your [SparkFun Qwiic HAT](https://www.sparkfun.com/products/14459) on top of the Audio Injector Octo soundcard hat.
-
 ### Setup software configuration
 
-This section will help you setup software components of your WHC 2021 SIC kit.
+This section will help you setup software components of your WHC 2021 SIC kit. Reminder, the hardware/software kit is the following: 
+▪ 1 Syntacts board (an open-source 8-channel amplifier designed for driving vibrators from audio sources – https://www.syntacts.org) 
+▪ 8 LRA vibrotactile actuators
+▪ 1 multichannel soundcard 
+▪ 1 Raspberry Pi 4 
+▪ FSRs (https://www.sparkfun.com/products/9375).
 
 #### Raspberry Pi 4
 
