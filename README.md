@@ -178,27 +178,29 @@ Please make sure to update as appropriate!
 
 **Hardware**:
 
-1 x Raspberry Pi 4
+1 x [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) * $35
 
-1 x 16 GB SD Card
+1 x [16 GB SD Card] (https://www.amazon.com/PNY-microSDHC-Memory-2-Pack-P-SDU16GX2U185GW-GE/dp/B07TDN2G18/ref=sr_1_1?dchild=1&keywords=16gb+micro+sd+card&qid=1624680378&sr=8-1) * $7
 
-1 x Octo Raspberry Pi Sound Card
+1 x [Octo Raspberry Pi Sound Card] (https://www.amazon.com/Octo-channel-sound-card-Raspberry/dp/B06Y3PZ6MF/ref=sr_1_4?dchild=1&keywords=Audio+Injector+Sound+Card+for+The+Raspberry+Pi+with+inbuilt+Microphone&qid=1624680521&s=electronics&sr=1-4) * $58
 
-1 x Syntacts Amplifier (TI-TPA211A1-Q1) - V3.1
+1 x [Syntacts Amplifier (TI-TPA211A1-Q1) - V3.1] (https://www.syntacts.org/hardware/) * $?
 
-4 x RCA to 3mm Cable
+4 x [RCA to 3mm Cable] (https://www.amazon.com/oldboytech-Nylon-Braided-Auxiliary-Smartphone-Echo-Dot/dp/B07HDYLFS2/ref=sr_1_4?dchild=1&keywords=3mm+to+rca+cable&qid=1624680665&sr=8-4) * $10
 
-2 x SparkFun QWIIC 12 Bit ADC - 4 Channel (ADS1015)
+2 x [SparkFun QWIIC 12 Bit ADC - 4 Channel] (https://www.sparkfun.com/products/15334) (ADS1015) * $10.50
 
-7 x Force Sensitive Resistor 0.5”
+7 x [Force Sensitive Resistor 0.5”] (https://www.sparkfun.com/products/9375) * $7
 
-7 x LRA Vibrotactile actuators
+7 x [8mm LRA Vibrotactile actuators] (https://www.digikey.com/en/products/detail/jinlong-machinery-electronics-inc/G0825001D/10285885) * $3.17
 
-3 x QWIIC Cable - 200mm 30 AWG black silicone stranded-core wire
+3 x [QWIIC Cable - 200mm] (https://www.sparkfun.com/products/14428) * $1.50
+
+[30 AWG black silicone stranded-core wire] (https://www.adafruit.com/product/2051) * $10
 
 **Software**:
 
-If you are pulling the Cyborg Crafts repository or imaging an SD card with the image file we provided you are all set to start sensory crafting!
+If you are pulling the [Cyborg Crafts repository] (https://github.com/ADataDate/Cyborg-Crafts-VTTV/wiki) or imaging an SD card with the image file we provided you are all set to start sensory crafting!
 
 Python 3/Pycharm
 
@@ -210,17 +212,17 @@ ADS1015 Python package
 
 **Other Materials:**
 
-Soldering Iron
+[Soldering Iron] (https://www.adafruit.com/product/3685) * $20
 
-Food vacuum sealer
+[Food vacuum sealer] (https://www.amazon.com/GERYON-Vacuum-Automatic-Machine-Starter/dp/B08DTS69FQ/ref=sr_1_6?dchild=1&keywords=vacuum+sealer&qid=1624681110&sr=8-6) * $20
 
-Vacuum sealer bags
+[Vacuum sealer bags] (https://www.amazon.com/Wevac-Weston-Commercial-Puncture-Prevention/dp/B07TV5RNQL/ref=sr_1_8?crid=1ORKZCBVYQ1W3&dchild=1&keywords=vacuum+sealer+bags&qid=1624681155&sprefix=vacuum+sealer%2Caps%2C232&sr=8-8) * $16
 
-Hand-held bag sealer
+[Hand-held bag sealer] (https://www.amazon.com/KARIDGE-Handheld-Airtight-Portable-Pressure/dp/B07SMFQJGW/ref=sr_1_10?dchild=1&keywords=handheld+bag+sealer&qid=1624681377&sr=8-10) * $9
 
-Drinking straw
+Hollow drinking/lolipop straws (plenty of options available) * $6
 
-Baking chocolate or Gummies (or any moldable food)
+[Baking chocolate] (https://www.amazon.com/NESTLE-HOUSE-Semi-Sweet-Chocolate-Morsels/dp/B00932F6Y6/ref=sr_1_5_0g_fs?dchild=1&keywords=chocolate+chips&qid=1624681674&s=grocery&sr=1-5) or [Gummies] (https://www.amazon.com/Haribo-Gummi-Candy-Goldbears-Pound/dp/B000EVOSE4/ref=sr_1_4?dchild=1&keywords=gummy+bears&qid=1624681711&rdc=1&s=grocery&sr=1-4) (or any moldable food) * $5
 
 Silicone Mold that fits in your mouth
 
