@@ -163,6 +163,14 @@ Crafting is the act of skillfully creating an object or an experience such as a 
 
 Through the creation and dissemination of VTTV, we will introduce a new genre of human augmentation: **sensory crafting**. Sensory crafting is the crafting of a sensory experience to be shared from one human's sensory modality (e.g., visual, auditory) to another through a mediating device. Unlike previous devices where the user reacts to transduced signals from sensors, VTTV encourages users to reflect on their own sensory experiences and then program actuation to be shared. In addition to a sensory crafting device, VTTV is also an open-source, hackable tongue display unit that can be utilized as a haptic output for various research and maker applications.
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update as appropriate!
+
+---------------
+
 ## Materials
 
 ![Materials](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig4.jpeg)
