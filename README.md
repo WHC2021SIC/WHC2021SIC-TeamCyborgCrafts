@@ -242,6 +242,7 @@ ADS1015 Python package
 
 <a name="mats"></a>
 **Other Materials:**
+
 [Heat shrink](https://www.amazon.com/Ginsco-580-pcs-Assorted-Sleeving/dp/B01MFA3OFA/ref=sr_1_4?dchild=1&keywords=heat+shrink&qid=1624685739&sr=8-4) * $7
 
 [Soldering Iron](https://www.adafruit.com/product/3685) * $20
