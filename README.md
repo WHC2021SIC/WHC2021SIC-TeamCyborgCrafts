@@ -187,7 +187,7 @@ Please make sure to update as appropriate!
 
 <a name="docs"></a>
 ## Other Documentation Platforms
-Support this project on the following documentation platforms:
+Support this project on the following platforms:
 
 [University of Colorado's website](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision)
 
