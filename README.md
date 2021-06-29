@@ -280,9 +280,9 @@ Reference the above diagram as you're wiring your VTTV together.
 
 - Connect the Raspberry Pi 4 to the Octo Audio Injector Sound Card
 
-- Connect the Sparkfun QWIIC I2C Breakout on top of the Octo Audio Injector Sound Card as shown in the WHCSIC Guide
+- Connect the Sparkfun QWIIC I2C Breakout on top of the Octo Audio Injector Sound Card as shown in the [WHCSIC Guide](https://github.com/WHC2021SIC/WHC2021SIC-Guide/blob/main/GettingStarted.md).
 
-- Change the I2C Address of each ADC from the default address of 0x48 to 0x4B and 0x49 (Figure 2). Follow along with the tutorial for trace cutting and solder jumper settings.
+- Change the I2C Address of each ADC from the default address of 0x48 to 0x4B and 0x49 (Figure 2). [Follow along with the tutorial for trace cutting and solder jumper settings](https://learn.sparkfun.com/tutorials/qwiic-12-bit-adc-hookup-guide?_ga=2.175585383.457433735.1623946206-1050187089.1523466762).
 
 - Connect the RCA to 3.5mm cables from the Octo Sound Card OUTPUT RCA block to the Syntacts board. See the hardware diagram above for further details. Where you connect the cables matters.
 
