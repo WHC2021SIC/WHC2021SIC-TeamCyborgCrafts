@@ -189,7 +189,9 @@ Please make sure to update as appropriate!
 ## Other Documentation Platforms
 Support this project on the following platforms:
 
-[University of Colorado's website](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision)
+[Cyborg Crafts' Github Wiki](https://github.com/ADataDate/Cyborg-Crafts-VTTV/wiki)
+
+[University of Colorado's Website](https://www.colorado.edu/atlas/cyborg-crafts-vibrotactile-tongue-vision)
 
 [Instructables](https://www.instructables.com/Cyborg-Crafts-Vibrotactile-Tongue-Vision-VTTV-Desi/)
 
@@ -274,7 +276,6 @@ Reference the above diagram as you're wiring your VTTV together.
 <a name="S1"></a>
 ## Step 1: Hardware Setup
 ![VTTV Diagram](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig6.png)
-![Bottom of soldered ADS1015](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig7.png)
 
 - Insert the imaged SD card into the Raspberry Pi and connect a mouse, keyboard, monitor, and power supply.
 
@@ -282,9 +283,10 @@ Reference the above diagram as you're wiring your VTTV together.
 
 - Connect the Sparkfun QWIIC I2C Breakout on top of the Octo Audio Injector Sound Card as shown in the [WHCSIC Guide](https://github.com/WHC2021SIC/WHC2021SIC-Guide/blob/main/GettingStarted.md).
 
-- Change the I2C Address of each ADC from the default address of 0x48 to 0x4B and 0x49 (Figure 2). [Follow along with the tutorial for trace cutting and solder jumper settings](https://learn.sparkfun.com/tutorials/qwiic-12-bit-adc-hookup-guide?_ga=2.175585383.457433735.1623946206-1050187089.1523466762).
+- Change the I2C Address of each ADC from the default address of 0x48 to 0x4B and 0x49 (figure below). [Follow along with the tutorial for trace cutting and solder jumper settings](https://learn.sparkfun.com/tutorials/qwiic-12-bit-adc-hookup-guide?_ga=2.175585383.457433735.1623946206-1050187089.1523466762).
+![Bottom of a soldered ADS1015](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig7.png)
 
-- Connect the RCA to 3.5mm cables from the Octo Sound Card OUTPUT RCA block to the Syntacts board. See the hardware diagram above for further details. Where you connect the cables matters.
+- Connect the RCA to 3.5mm cables from the Octo Sound Card OUTPUT RCA block to the Syntacts board. See the hardware diagram above (Figure 1) for further details. Where you connect the cables matters.
 
 - Connect a 5V power supply to the syntax board.
 
