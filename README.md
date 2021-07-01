@@ -4,7 +4,8 @@
 
 ### Cyborg Crafts: Vibrotactile Tongue Vision (VTTV) is a seven-segment vibrotactile tongue display that enables users to augment auditory and visual experiences through haptics.
 
-[![VTTV video](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png)](https://youtu.be/OLJ-cNghGf0 "VTTV video")
+[![VTTV video](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png)](https://youtu.be/UD9IrikeVV8)
+
 
 This project was submitted, and accepted to, the [IEEE World Haptics Conference 2021 Student Innovation Challenge](https://2021.worldhaptics.org/sic/). Very big thank you to the organizers for supplying the hardware!
 
