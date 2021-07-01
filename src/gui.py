@@ -12,7 +12,8 @@ import syntacts as s
 import os
 import Adafruit_ADS1x15
 import threading
-from PIL import Image, ImageTk
+import PIL as PIL
+from PIL import ImageTk
 import time
 import random
 
@@ -82,6 +83,15 @@ class tkinterApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         # __init__ function for class Tk
         tk.Tk.__init__(self, *args, **kwargs)
+        dirloc = os.path.dirname(os.path.abspath('gui.py'))
+        filename = dirloc + '\VTTV_OldLogo.gif'
+        print(filename)
+        
+        im = PIL.Image.open(filename)
+        photo = ImageTk.PhotoImage(im)
+        
+  
+        self.iconphoto(False, photo)
         self.title("VTTV")
 
         # creating a container
@@ -127,8 +137,8 @@ class StartPage(tk.Frame):
 
         # putting the grid in its place by using
         # grid
-        label.grid(row=0, column=0, padx=20, pady=10, columnspan=3)
-        label1.grid(row=1, column=0, padx=20, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=50, pady=10, columnspan=3)
+        label1.grid(row=1, column=0, padx=50, pady=10, columnspan=3)
         button1 = ttk.Button(self, text="Craft",
                              command=lambda: controller.show_frame(Craft))
 
@@ -163,7 +173,7 @@ class Craft(tk.Frame):
         tk.Frame.__init__(self, parent)
         #exec(open("craft.py").read())
         label = ttk.Label(self, text ="Craft", font = LARGEFONT)
-        label.grid(row = 0, column=0, padx = 90, pady = 10)
+        label.grid(row = 0, column=0, padx = 100, pady = 10)
 
                 # button to show frame 2 with text
         # layout2
@@ -198,7 +208,7 @@ class Train(tk.Frame):
         tk.Frame.__init__(self, parent)
         
         label = ttk.Label(self, text ="Train", font = LARGEFONT)
-        label.grid(row = 0, column=0, padx = 90, pady = 10)
+        label.grid(row = 0, column=0, padx = 100, pady = 10)
 
         # button to show frame 2 with text
         # layout2
@@ -231,7 +241,7 @@ class Train1(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         label = ttk.Label(self, text="Numbers", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=80, pady=10, columnspan=3)
 
         self.btn = [0 for x in range(9)]
 
@@ -290,18 +300,18 @@ class Train2(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         label = ttk.Label(self, text="Letters", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
+        label.grid(row=0, column=0, padx=90, pady=10, columnspan = 4)
 
         letter_var = tk.StringVar()
 
         letter_entry = tk.Entry(self, textvariable=letter_var, font=('calibre', 10, 'normal'))
 
-        letter_entry.grid(row=1, column=0, padx=10, pady=10)
+        letter_entry.grid(row=1, column=2, padx=90, pady=10)
 
         button1 = ttk.Button(self, text="Submit",
                              command=lambda: submit())
 
-        button1.grid(row=2, column=0, padx=10, pady=10)
+        button1.grid(row=2, column=2, padx=90, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -310,7 +320,7 @@ class Train2(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=3, column=0, padx=10, pady=10)
+        button2.grid(row=3, column=2, padx=90, pady=10)
 
         def submit():
             letter = letter_var.get()
@@ -331,7 +341,7 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button1.grid(row=1, column=1, padx=120, pady=10)
+        button1.grid(row=1, column=2, padx=120, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -340,14 +350,14 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=2, column=1, padx=120, pady=10)
+        button2.grid(row=2, column=2, padx=120, pady=10)
 
         button3 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row=3, column=1, padx=120, pady=10)
+        button3.grid(row=3, column=2, padx=120, pady=10)
 
 
 class Game1(tk.Frame):
@@ -360,10 +370,10 @@ class Game1(tk.Frame):
 
 
         label = ttk.Label(self, text="Whack A Mole", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=20, pady=10, columnspan=4)
 
         label1 = ttk.Label(self, text="Hits: ", font=SMALLFONT)
-        label1.grid(row=1, column=0, padx=10, pady=10, columnspan=1)
+        label1.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
         
         
         hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
@@ -378,39 +388,39 @@ class Game1(tk.Frame):
 
 
         button1 = ttk.Button(self, command=lambda:put_down_mole(0,False))
-        button1.grid(row=2, column=0, padx=10, pady=10)
+        button1.grid(row=2, column=1, padx=20, pady=10)
 
         button2 = ttk.Button(self,command=lambda:put_down_mole(1,False))
 
-        button2.grid(row=2, column=1, padx=10, pady=10)
+        button2.grid(row=3, column=0, padx=20, pady=10)
 
         button3 = ttk.Button(self, command=lambda:put_down_mole(2,False))
 
-        button3.grid(row=2, column=2, padx=10, pady=10)
+        button3.grid(row=3, column=2, padx=20, pady=10)
 
         button4 = ttk.Button(self, command=lambda:put_down_mole(3,False))
 
-        button4.grid(row=3, column=0, padx=10, pady=10)
+        button4.grid(row=4, column=1, padx=20, pady=10)
 
         button5 = ttk.Button(self,  command=lambda:put_down_mole(4,False))
 
-        button5.grid(row=3, column=1, padx=10, pady=10)
+        button5.grid(row=5, column=0, padx=20, pady=10)
 
         button6 = ttk.Button(self,  command=lambda:put_down_mole(5,False))
 
-        button6.grid(row=3, column=2, padx=10, pady=10)
+        button6.grid(row=5, column=2, padx=20, pady=10)
 
         button7 = ttk.Button(self, command=lambda:put_down_mole(6,False))
 
-        button7.grid(row=4, column=0, padx=10, pady=10)
+        button7.grid(row=6, column=1, padx=20, pady=10)
 
-        button8 = ttk.Button(self, command=lambda:put_down_mole(7,False))
+        # button8 = ttk.Button(self, command=lambda:put_down_mole(7,False))
 
-        button8.grid(row=4, column=1, padx=10, pady=10)
+        # button8.grid(row=4, column=1, padx=10, pady=10)
 
-        button9 = ttk.Button(self, command=lambda:put_down_mole(8,False))
+        # button9 = ttk.Button(self, command=lambda:put_down_mole(8,False))
 
-        button9.grid(row=4, column=2, padx=10, pady=10)
+        # button9.grid(row=4, column=2, padx=10, pady=10)
         # button to show frame 3 with text
         # layout3
         
@@ -419,21 +429,21 @@ class Game1(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        start_button.grid(row=5, column=1, padx=10, pady=10)
+        start_button.grid(row=7, column=1, padx=10, pady=10)
         
         button10 = ttk.Button(self, text="Home",
                               command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button10.grid(row=6, column=1, padx=10, pady=10)
+        button10.grid(row=8, column=1, padx=10, pady=10)
         
         
         
         time_down = []
-        button_names = [button1,button2,button3,button4,button5,button6,button7,button8,button9]
+        button_names = [button1,button2,button3,button4,button5,button6,button7]
         time_down = []
-        channel_active = [0,0,0,0,0,0,0,0,0]
+        channel_active = [0,0,0,0,0,0,0]
         missed_count = 0
         self.game_is_running = False
         def startWhack():
@@ -448,7 +458,7 @@ class Game1(tk.Frame):
                                                         pop_up_mole(active_mole, 0))
                 #ChangeLabelText(button_names[active_mole], "x")
             
-                for i in range(9):
+                for i in range(7):
                     time_down.append(random.randint(1000,10000))
                     
                 self.after(time_down[0],lambda:pop_up_mole(0, 0))
@@ -512,15 +522,15 @@ class Game1(tk.Frame):
                 
                 global sess
                 sess.open()
-                for channel in range(9):
+                for channel in range(7):
                     if channel_active[channel]:
                         print("Would play sequence for channel: " + str(channel))
                         sess.play(channel, sequence)
-                # The Signal will immediately start playing in the Session's audio thread,
-                # but we need to sleep this thread so that the program doesn't continue prematurely
-                sleep(sequence.length*.9)
-                # Now, we stop the Signal on channel 0 (sig1 will have played for 3 seconds)
-                sess.close()
+                        # The Signal will immediately start playing in the Session's audio thread,
+                        # but we need to sleep this thread so that the program doesn't continue prematurely
+                        sleep(sequence.length*.9)
+                        # Now, we stop the Signal on channel 0 (sig1 will have played for 3 seconds)
+                        sess.close()
                             # Wait while sequence plays for SAMPLE_PERIOD seconds
                 
             # Wait while sequence plays for SAMPLE_PERIOD seconds
@@ -560,18 +570,222 @@ class Game2(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
-        label = ttk.Label(self, text="Simon Vibes \n(Coming Soon)", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
+        label = ttk.Label(self, text="Simon Vibes", font=LARGEFONT)
+        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+        
+        label1 = ttk.Label(self, text="Score: ", font=SMALLFONT)
+        label1.grid(row=1, column=0, padx=10, pady=10)
+        
+        hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
+        hit_counter.grid(row=1, column=2, padx=10, pady=10)
+        
+        
+        button1 = ttk.Button(self, command = lambda: simonpress(0))
+        button1.grid(row=2, column=1, padx=10, pady=10)
+
+        button2 = ttk.Button(self, command =lambda: simonpress(1))
+
+        button2.grid(row=3, column=0, padx=10, pady=10)
+
+        button3 = ttk.Button(self, command =lambda: simonpress(2))
+
+        button3.grid(row=3, column=2, padx=10, pady=10)
+
+        button4 = ttk.Button(self, command=lambda: simonpress(3))
+
+        button4.grid(row=4, column=1, padx=10, pady=10)
+        
+        start_button = ttk.Button(self, text="Start",
+                      command=lambda: startSimon())
+
+        # putting the button in its place by
+        # using grid
+        start_button.grid(row=5, column=1, padx=10, pady=10)
 
         # button to show frame 3 with text
         # layout3
-        button2 = ttk.Button(self, text="Home",
+        button5 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=1, column=0, padx=10, pady=10)
-
+        button5.grid(row=6, column=1, padx=10, pady=10)
+        
+        self.simon = [0]
+        self.pressed = [0]
+        score = 0
+        base_wave = s.Sine(FREQUENCY)
+        sequence = base_wave * s.Envelope(SAMPLE_PERIOD, 1)
+        sig = sequence << 1
+        self.buttons = [button1, button2, button3, button4]
+        self.game_is_running = False
+        self.score = 0
+        self.seqpos = 0
+        self.existingrun = False
+        self.finished = False
+        
+        
+        
+        global sess
+    
+        
+        def startSimon():
+            if start_button['text'] == 'Start':
+                self.score = 0
+                self.seqpos = 0
+                self.simon = [0]
+                ChangeLabelText(hit_counter, str(self.score))
+                ChangeLabelText(label1, "Score: ")
+                sess.open()
+                self.game_is_running = True
+                # for i in range(9):
+                #      ChangeLabelText(button_names[i], " ")
+                ChangeLabelText(start_button, "Stop")
+                the_button = random.randint(0,3)
+                self.simon[0]=the_button
+                ChangeLabelText(self.buttons[the_button], "X")
+                self.after(1800, lambda:ChangeLabelText(self.buttons[the_button], " "))
+                sess.play(self.simon[0], sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+            else:  # The game is running, so stop the game and reset everything
+                start_button['text'] = "Start"
+                self.game_is_running = False
+        
+        def simonpress(m):
+            if len(self.simon) == 1 and m==self.simon[0]:
+                self.pressed = [m]
+                self.score+=1
+                print('add one to score')
+                ChangeLabelText(hit_counter, str(self.score))
+                the_button = random.randint(0,3)
+                self.simon.append(the_button)
+                playsequence(0)
+            elif len(self.simon) == 1 and m!=self.simon[0]:
+                print("simon press game over")
+                ChangeLabelText(hit_counter, " ")
+                ChangeLabelText(label1, "Game Over")
+                ChangeLabelText(start_button, "Start")
+                self.pressed = [0]
+                self.simon = [0]
+                sess.open()
+                sess.play_all(sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+            elif len(self.simon)>1 and self.existingrun == True:
+                self.pressed.append(m)
+                validate(len(self.pressed)-1)
+            elif len(self.simon)>1 and len(self.pressed)<=1 and self.existingrun ==False:
+                self.pressed = [m]
+                validate(len(self.pressed)-1)
+                self.existingrun = True
+                                            #!!this is unfinished
+                # self.score+=1
+                # print('add one to score')
+                # ChangeLabelText(hit_counter, str(self.score))
+                # the_button = random.randint(0,3)
+                # self.simon.append(the_button)
+                # playsequence(0)
+                # print(self.simon)
+        
+        def validate(x):
+            print(self.pressed)
+            print(len(self.pressed))
+            print(x)
+            print(len(self.simon)-1)
+            if x == len(self.simon)-1 and self.finished ==False:
+                 self.finished = True
+                 validate(x)
+            elif self.finished == True:
+                 print('finished')
+                 if self.pressed[x] == self.simon[x] and x>0:
+                    x -=1
+                    validate(x)
+                 elif self.pressed[x] == self.simon[x] and x==0:
+                    self.score += 1
+                    print('yay!')
+                    ChangeLabelText(hit_counter, str(self.score))
+                    the_button = random.randint(0,3)
+                    self.pressed = [0]
+                    self.simon.append(the_button)
+                    self.existingrun = False
+                    self.finished = False
+                    playsequence(0)
+                 elif self.pressed != self.simon[x]:
+                    ChangeLabelText(hit_counter, " ")
+                    ChangeLabelText(label1, "Game Over")
+                    ChangeLabelText(start_button, "Start")
+                    self.pressed = [0]
+                    self.simon = [0]
+                    self.existingrun = False
+                    self.finished = False
+                    sess.open()
+              
+                    sess.play_all(sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                    time.sleep(sig.length*2)
+                    sess.close()
+            else:
+               if self.pressed[x] != self.simon[x]:
+                    print(self.pressed)
+                    print(x)
+                    ChangeLabelText(hit_counter, " ")
+                    ChangeLabelText(label1, "Game Over")
+                    ChangeLabelText(start_button, "Start")
+                    self.pressed = [0]
+                    self.simon = [0]
+                    self.existingrun = False
+                    sess.open()
+              
+                    sess.play_all(sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                    time.sleep(sig.length*2)
+                    sess.close()
+             
+                
+                            
+        def playsequence(x):
+            j=0
+            print(self.simon)
+            if x == 0:
+                this_button = self.simon[x]
+                sess.open()
+          
+                sess.play(self.simon[x], sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+                x+=1
+            else:
+                j = self.simon[x]
+                print(j)
+                self.after(500, lambda: ChangeLabelText(self.buttons[j], "X"))
+                self.after(1000, lambda:ChangeLabelText(self.buttons[j], " "))
+                sess.open()
+          
+                sess.play(self.simon[x], sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+                x+=1
+            if x<len(self.simon):
+                self.after(1000, playsequence(x))
+        
+            
 
 def print_mapping(value, char_mapping_dict):
     if value.isalnum() and value in char_mapping_dict:
@@ -693,7 +907,6 @@ def startCraft(play):
 
 def ChangeLabelText(m,buttonText):
     m.config(text = buttonText)
-    print("popping up")
 
 
     
