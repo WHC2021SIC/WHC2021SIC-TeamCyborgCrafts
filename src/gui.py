@@ -783,7 +783,7 @@ class Game2(tk.Frame):
                 self.after(1000, playsequence(x))
         
             
->>>>>>> Stashed changes
+
 
 def print_mapping(value, char_mapping_dict):
     if value.isalnum() and value in char_mapping_dict:
