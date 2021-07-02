@@ -7,11 +7,12 @@ Created on Thu Jun 17 21:11:08 2021
 import tkinter as tk
 from tkinter import ttk
 from time import sleep
-import syntacts as s 
+import syntacts as s
 import os
 import Adafruit_ADS1x15
 import threading
-from PIL import Image, ImageTk
+import PIL as PIL
+from PIL import ImageTk
 import time
 import random
 
@@ -81,6 +82,15 @@ class tkinterApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         # __init__ function for class Tk
         tk.Tk.__init__(self, *args, **kwargs)
+        dirloc = os.path.dirname(os.path.abspath('gui.py'))
+        filename = dirloc + '\VTTV_OldLogo.gif'
+        print(filename)
+
+        im = PIL.Image.open(filename)
+        photo = ImageTk.PhotoImage(im)
+
+
+        self.iconphoto(False, photo)
         self.title("VTTV")
 
         # creating a container
@@ -126,8 +136,8 @@ class StartPage(tk.Frame):
 
         # putting the grid in its place by using
         # grid
-        label.grid(row=0, column=0, padx=20, pady=10, columnspan=3)
-        label1.grid(row=1, column=0, padx=20, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=50, pady=10, columnspan=3)
+        label1.grid(row=1, column=0, padx=50, pady=10, columnspan=3)
         button1 = ttk.Button(self, text="Craft",
                              command=lambda: controller.show_frame(Craft))
 
@@ -162,7 +172,7 @@ class Craft(tk.Frame):
         tk.Frame.__init__(self, parent)
         #exec(open("craft.py").read())
         label = ttk.Label(self, text ="Craft", font = LARGEFONT)
-        label.grid(row = 0, column=0, padx = 90, pady = 10)
+        label.grid(row = 0, column=0, padx = 100, pady = 10)
 
                 # button to show frame 2 with text
         # layout2
@@ -195,9 +205,9 @@ class Craft(tk.Frame):
 class Train(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         label = ttk.Label(self, text ="Train", font = LARGEFONT)
-        label.grid(row = 0, column=0, padx = 90, pady = 10)
+        label.grid(row = 0, column=0, padx = 100, pady = 10)
 
         # button to show frame 2 with text
         # layout2
@@ -230,7 +240,7 @@ class Train1(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         label = ttk.Label(self, text="Numbers", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=80, pady=10, columnspan=3)
 
         self.btn = [0 for x in range(9)]
 
@@ -289,18 +299,18 @@ class Train2(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         label = ttk.Label(self, text="Letters", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
+        label.grid(row=0, column=0, padx=90, pady=10, columnspan = 4)
 
         letter_var = tk.StringVar()
 
         letter_entry = tk.Entry(self, textvariable=letter_var, font=('calibre', 10, 'normal'))
 
-        letter_entry.grid(row=1, column=0, padx=10, pady=10)
+        letter_entry.grid(row=1, column=2, padx=90, pady=10)
 
         button1 = ttk.Button(self, text="Submit",
                              command=lambda: submit())
 
-        button1.grid(row=2, column=0, padx=10, pady=10)
+        button1.grid(row=2, column=2, padx=90, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -309,7 +319,7 @@ class Train2(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=3, column=0, padx=10, pady=10)
+        button2.grid(row=3, column=2, padx=90, pady=10)
 
         def submit():
             letter = letter_var.get()
@@ -330,7 +340,7 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button1.grid(row=1, column=1, padx=120, pady=10)
+        button1.grid(row=1, column=2, padx=120, pady=10)
 
         # button to show frame 3 with text
         # layout3
@@ -339,35 +349,35 @@ class Games(tk.Frame):
 
         # putting the button in its place by
         # using grid
-        button2.grid(row=2, column=1, padx=120, pady=10)
+        button2.grid(row=2, column=2, padx=120, pady=10)
 
         button3 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button3.grid(row=3, column=1, padx=120, pady=10)
+        button3.grid(row=3, column=2, padx=120, pady=10)
 
 
 class Game1(tk.Frame):
 
-        
+
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
 
 
 
         label = ttk.Label(self, text="Whack A Mole", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10, columnspan=3)
+        label.grid(row=0, column=0, padx=20, pady=10, columnspan=4)
 
         label1 = ttk.Label(self, text="Hits: ", font=SMALLFONT)
-        label1.grid(row=1, column=0, padx=10, pady=10, columnspan=1)
-        
-        
+        label1.grid(row=1, column=0, padx=10, pady=10, columnspan=2)
+
+
         hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
         hit_counter.grid(row=1, column=2, padx=10, pady=10)
-        
+
         self.btn = [0 for x in range(9)]
 
         # for x in range(8):
@@ -377,62 +387,62 @@ class Game1(tk.Frame):
 
 
         button1 = ttk.Button(self, command=lambda:put_down_mole(0,False))
-        button1.grid(row=2, column=0, padx=10, pady=10)
+        button1.grid(row=2, column=1, padx=20, pady=10)
 
         button2 = ttk.Button(self,command=lambda:put_down_mole(1,False))
 
-        button2.grid(row=2, column=1, padx=10, pady=10)
+        button2.grid(row=3, column=0, padx=20, pady=10)
 
         button3 = ttk.Button(self, command=lambda:put_down_mole(2,False))
 
-        button3.grid(row=2, column=2, padx=10, pady=10)
+        button3.grid(row=3, column=2, padx=20, pady=10)
 
         button4 = ttk.Button(self, command=lambda:put_down_mole(3,False))
 
-        button4.grid(row=3, column=0, padx=10, pady=10)
+        button4.grid(row=4, column=1, padx=20, pady=10)
 
         button5 = ttk.Button(self,  command=lambda:put_down_mole(4,False))
 
-        button5.grid(row=3, column=1, padx=10, pady=10)
+        button5.grid(row=5, column=0, padx=20, pady=10)
 
         button6 = ttk.Button(self,  command=lambda:put_down_mole(5,False))
 
-        button6.grid(row=3, column=2, padx=10, pady=10)
+        button6.grid(row=5, column=2, padx=20, pady=10)
 
         button7 = ttk.Button(self, command=lambda:put_down_mole(6,False))
 
-        button7.grid(row=4, column=0, padx=10, pady=10)
+        button7.grid(row=6, column=1, padx=20, pady=10)
 
-        button8 = ttk.Button(self, command=lambda:put_down_mole(7,False))
+        # button8 = ttk.Button(self, command=lambda:put_down_mole(7,False))
 
-        button8.grid(row=4, column=1, padx=10, pady=10)
+        # button8.grid(row=4, column=1, padx=10, pady=10)
 
-        button9 = ttk.Button(self, command=lambda:put_down_mole(8,False))
+        # button9 = ttk.Button(self, command=lambda:put_down_mole(8,False))
 
-        button9.grid(row=4, column=2, padx=10, pady=10)
+        # button9.grid(row=4, column=2, padx=10, pady=10)
         # button to show frame 3 with text
         # layout3
-        
+
         start_button = ttk.Button(self, text="Start",
                               command=lambda: startWhack())
 
         # putting the button in its place by
         # using grid
-        start_button.grid(row=5, column=1, padx=10, pady=10)
-        
+        start_button.grid(row=7, column=1, padx=10, pady=10)
+
         button10 = ttk.Button(self, text="Home",
                               command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-        button10.grid(row=6, column=1, padx=10, pady=10)
-        
-        
-        
+        button10.grid(row=8, column=1, padx=10, pady=10)
+
+
+
         time_down = []
-        button_names = [button1,button2,button3,button4,button5,button6,button7,button8,button9]
+        button_names = [button1,button2,button3,button4,button5,button6,button7]
         time_down = []
-        channel_active = [0,0,0,0,0,0,0,0,0]
+        channel_active = [0,0,0,0,0,0,0]
         missed_count = 0
         self.game_is_running = False
         def startWhack():
@@ -446,10 +456,10 @@ class Game1(tk.Frame):
                 button_names[active_mole].after(1000,
                                                         pop_up_mole(active_mole, 0))
                 #ChangeLabelText(button_names[active_mole], "x")
-            
-                for i in range(9):
+
+                for i in range(7):
                     time_down.append(random.randint(1000,10000))
-                    
+
                 self.after(time_down[0],lambda:pop_up_mole(0, 0))
                 self.after(time_down[1],lambda:pop_up_mole(1, 0))
                 self.after(time_down[2],lambda:pop_up_mole(2, 0))
@@ -459,18 +469,18 @@ class Game1(tk.Frame):
                 self.after(time_down[6],lambda:pop_up_mole(6, 0))
                 self.after(time_down[7],lambda:pop_up_mole(7, 0))
                 self.after(time_down[8],lambda:pop_up_mole(8, 0))
-                    
+
                 print(time_down)
-                
-               
-            
+
+
+
             else:  # The game is running, so stop the game and reset everything
                 start_button['text'] = "Start"
                 self.game_is_running = False
 
-                
+
         def put_down_mole(m, timer_expired):
-            
+
             if self.game_is_running:
                 the_label = button_names[m]
                 if timer_expired == False:
@@ -478,75 +488,75 @@ class Game1(tk.Frame):
                       # Make the mole invisible
                           hit_counter['text'] = str(int(hit_counter['text']) + 1)
                       # Set a call to pop up the mole in the future
-                
+
                 # ChangeLabelText(the_label, " ")
                 # if timer_expired:
                 #     # The mole is going down before it was clicked on, so update the miss counter
                 #     self.miss_counter['text'] = str(int(self.miss_counter['text']) + 1)
                     # The timer did not expire, so manually stop the timer
-          
-                
+
+
                 ChangeLabelText(the_label, " ")
                 channel_active[m] =0
                 time_down[m] = random.randint(1000,
                                         3000)
                 print(time_down[m])
-                
+
                 self.after(time_down[m], lambda:pop_up_mole(m,time_down[m]))
                 # button_names[m].after(0,
                 #                                         ChangeLabelText(the_label, " "))
                 # Remember the timer object so it can be canceled later, if need be
-       
 
-    
+
+
         def pop_up_mole(m, time_hold):
             # Show the mole on the screen
             the_label = button_names[m]
-         
+
             if self.game_is_running:
                  # Create a base sine wave for motors
                 channel_active[m] = 1
                 base_wave = s.Sine(FREQUENCY)
                 sequence = base_wave * s.Envelope(SAMPLE_PERIOD, 1)
-                
+
                 global sess
                 sess.open()
-                for channel in range(9):
+                for channel in range(7):
                     if channel_active[channel]:
                         print("Would play sequence for channel: " + str(channel))
                         sess.play(channel, sequence)
-                # The Signal will immediately start playing in the Session's audio thread,
-                # but we need to sleep this thread so that the program doesn't continue prematurely
-                sleep(sequence.length*.9)
-                # Now, we stop the Signal on channel 0 (sig1 will have played for 3 seconds)
-                sess.close()
+                        # The Signal will immediately start playing in the Session's audio thread,
+                        # but we need to sleep this thread so that the program doesn't continue prematurely
+                        sleep(sequence.length*.9)
+                        # Now, we stop the Signal on channel 0 (sig1 will have played for 3 seconds)
+                        sess.close()
                             # Wait while sequence plays for SAMPLE_PERIOD seconds
-                
+
             # Wait while sequence plays for SAMPLE_PERIOD seconds
                 #sleep(sequence.length * .9)
                  # while 1:
                 time_up = random.randint(4000,10000)
                 self.after(10, lambda: ChangeLabelText(the_label, "X"))
-                
-                # mole_input(sequence, m, time_up)
-                
-                
-            
-                # Set a call to make the mole disappear in the future
-                
-                self.after(time_up, lambda:put_down_mole(m, True))
-                
-            
 
-            
-            
-            
+                # mole_input(sequence, m, time_up)
+
+
+
+                # Set a call to make the mole disappear in the future
+
+                self.after(time_up, lambda:put_down_mole(m, True))
+
+
+
+
+
+
             # button_names[active_mole].after(time_down[active_mole],
             #                                         ChangeLabelText(button_names[active_mole], " "), button_names[active_mole])
         #     for i in range(random.randint(0,5)):
         #         newMole(i)
         #     print(active_mole)
-        
+
         # def newMole(m):
         #     ChangeLabelText(button_names[m], "x")
         #     sleep(random.random()*3)
@@ -559,20 +569,16 @@ class Game2(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
-<<<<<<< Updated upstream
-        label = ttk.Label(self, text="Simon Vibes \n(Coming Soon)", font=LARGEFONT)
-        label.grid(row=0, column=0, padx=10, pady=10)
-=======
         label = ttk.Label(self, text="Simon Vibes", font=LARGEFONT)
         label.grid(row=0, column=0, padx=50, pady=50, columnspan=3)
-        
+
         label1 = ttk.Label(self, text="Score: ", font=SMALLFONT)
         label1.grid(row=1, column=0, padx=20, pady=20)
-        
+
         hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
         hit_counter.grid(row=1, column=2, padx=10, pady=10)
-        
-        
+
+
         button1 = ttk.Button(self, command = lambda: simonpress(0))
         button1.grid(row=2, column=1, padx=10, pady=10)
 
@@ -587,28 +593,25 @@ class Game2(tk.Frame):
         button4 = ttk.Button(self, command=lambda: simonpress(3))
 
         button4.grid(row=4, column=1, padx=10, pady=10)
-        
+
         start_button = ttk.Button(self, text="Start",
                       command=lambda: startSimon())
 
         # putting the button in its place by
         # using grid
         start_button.grid(row=5, column=1, padx=10, pady=10)
->>>>>>> Stashed changes
 
         # button to show frame 3 with text
         # layout3
-        button2 = ttk.Button(self, text="Home",
+        button5 = ttk.Button(self, text="Home",
                              command=lambda: controller.show_frame(StartPage))
 
         # putting the button in its place by
         # using grid
-<<<<<<< Updated upstream
-        button2.grid(row=1, column=0, padx=10, pady=10)
+    
 
-=======
         button5.grid(row=6, column=1, padx=10, pady=10)
-        
+
         self.simon = [0]
         self.pressed = [0]
         score = 0
@@ -621,11 +624,12 @@ class Game2(tk.Frame):
         self.seqpos = 0
         self.existingrun = False
         self.finished = False
-        
-        
+
+
+
         global sess
-    
-        
+
+
         def startSimon():
             if start_button['text'] == 'Start':
                 self.score = 0
@@ -643,7 +647,7 @@ class Game2(tk.Frame):
                 ChangeLabelText(self.buttons[the_button], "X")
                 self.after(1800, lambda:ChangeLabelText(self.buttons[the_button], " "))
                 sess.play(self.simon[0], sig)
-                
+
                 # The Signal will immediately start playing in the Session's audio thread,
                 # but we need to sleep this thread so that the program doesn't continue prematurely
                 time.sleep(sig.length*2)
@@ -651,7 +655,7 @@ class Game2(tk.Frame):
             else:  # The game is running, so stop the game and reset everything
                 start_button['text'] = "Start"
                 self.game_is_running = False
-        
+
         def simonpress(m):
             if len(self.simon) == 1 and m==self.simon[0]:
                 self.pressed = [m]
@@ -670,7 +674,7 @@ class Game2(tk.Frame):
                 self.simon = [0]
                 sess.open()
                 sess.play_all(sig)
-            
+
             # The Signal will immediately start playing in the Session's audio thread,
             # but we need to sleep this thread so that the program doesn't continue prematurely
                 time.sleep(sig.length*2)
@@ -682,15 +686,8 @@ class Game2(tk.Frame):
                 self.pressed = [m]
                 validate(len(self.pressed)-1)
                 self.existingrun = True
-                                            #!!this is unfinished
-                # self.score+=1
-                # print('add one to score')
-                # ChangeLabelText(hit_counter, str(self.score))
-                # the_button = random.randint(0,3)
-                # self.simon.append(the_button)
-                # playsequence(0)
-                # print(self.simon)
-        
+
+
         def validate(x):
             print(self.pressed)
             print(len(self.pressed))
@@ -723,9 +720,9 @@ class Game2(tk.Frame):
                     self.existingrun = False
                     self.finished = False
                     sess.open()
-              
+
                     sess.play_all(sig)
-                
+
                 # The Signal will immediately start playing in the Session's audio thread,
                 # but we need to sleep this thread so that the program doesn't continue prematurely
                     time.sleep(sig.length*2)
@@ -741,25 +738,25 @@ class Game2(tk.Frame):
                     self.simon = [0]
                     self.existingrun = False
                     sess.open()
-              
+
                     sess.play_all(sig)
-                
+
                 # The Signal will immediately start playing in the Session's audio thread,
                 # but we need to sleep this thread so that the program doesn't continue prematurely
                     time.sleep(sig.length*2)
                     sess.close()
-             
-                
-                            
+
+
+
         def playsequence(x):
             j=0
             print(self.simon)
             if x == 0:
                 this_button = self.simon[x]
                 sess.open()
-          
+
                 sess.play(self.simon[x], sig)
-            
+
             # The Signal will immediately start playing in the Session's audio thread,
             # but we need to sleep this thread so that the program doesn't continue prematurely
                 time.sleep(sig.length*2)
@@ -771,9 +768,9 @@ class Game2(tk.Frame):
                 self.after(500, lambda: ChangeLabelText(self.buttons[j], "X"))
                 self.after(1000, lambda:ChangeLabelText(self.buttons[j], " "))
                 sess.open()
-          
+
                 sess.play(self.simon[x], sig)
-            
+
             # The Signal will immediately start playing in the Session's audio thread,
             # but we need to sleep this thread so that the program doesn't continue prematurely
                 time.sleep(sig.length*2)
@@ -781,8 +778,7 @@ class Game2(tk.Frame):
                 x+=1
             if x<len(self.simon):
                 self.after(1000, playsequence(x))
-        
-            
+
 
 
 def print_mapping(value, char_mapping_dict):
@@ -825,7 +821,7 @@ def user_input(value, char_mapping_dict):
     except ValueError:
        print("invalid input")
     sess.close()
-    
+
 def mole_input(seq, m, time_up):
     global sess
     sess.open()
@@ -885,7 +881,7 @@ def thread_function():
             break
 
     sess.close()
-       
+
 
 def startCraft(play):
     global kill_thread
@@ -905,10 +901,9 @@ def startCraft(play):
 
 def ChangeLabelText(m,buttonText):
     m.config(text = buttonText)
-    print("popping up")
 
 
-    
+
 
 # Driver Code
 app = tkinterApp()
