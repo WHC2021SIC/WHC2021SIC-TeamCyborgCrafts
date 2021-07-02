@@ -142,7 +142,7 @@ Cyborg Crafts: Vibrotactile Tongue Vision (VTTV) is a seven-segment vibrotactile
 
 ## Introduction
 
-<!-- Explain your project: for now copy the 300-word description from your proposal -->
+[![VTTV video](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/ccplaybutton.png)](https://youtu.be/UD9IrikeVV8)
 
 The Vibrotactile Tongue Vision (VTTV) system is an open-source programmable tongue display unit (TDU) that augments visual and auditory experiences through haptic feedback. VTTV is designed to be low floor and wide walls, enabling those without embedded systems skills to fabricate a TDU, controller, and craft tactile experiences easily. Experienced engineers, researchers, makers, and artists can hack VTTV to be an actuator in their projects.
 
