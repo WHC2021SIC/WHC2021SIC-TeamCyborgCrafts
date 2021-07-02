@@ -685,14 +685,7 @@ class Game2(tk.Frame):
                 self.pressed = [m]
                 validate(len(self.pressed)-1)
                 self.existingrun = True
-                                            #!!this is unfinished
-                # self.score+=1
-                # print('add one to score')
-                # ChangeLabelText(hit_counter, str(self.score))
-                # the_button = random.randint(0,3)
-                # self.simon.append(the_button)
-                # playsequence(0)
-                # print(self.simon)
+
         
         def validate(x):
             print(self.pressed)
