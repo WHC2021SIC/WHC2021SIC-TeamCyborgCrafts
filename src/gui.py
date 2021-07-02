@@ -560,8 +560,42 @@ class Game2(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
+<<<<<<< Updated upstream
         label = ttk.Label(self, text="Simon Vibes \n(Coming Soon)", font=LARGEFONT)
         label.grid(row=0, column=0, padx=10, pady=10)
+=======
+        label = ttk.Label(self, text="Simon Vibes", font=LARGEFONT)
+        label.grid(row=0, column=0, padx=50, pady=50, columnspan=3)
+        
+        label1 = ttk.Label(self, text="Score: ", font=SMALLFONT)
+        label1.grid(row=1, column=0, padx=20, pady=20)
+        
+        hit_counter = ttk.Label(self, text="0", font=SMALLFONT)
+        hit_counter.grid(row=1, column=2, padx=10, pady=10)
+        
+        
+        button1 = ttk.Button(self, command = lambda: simonpress(0))
+        button1.grid(row=2, column=1, padx=10, pady=10)
+
+        button2 = ttk.Button(self, command =lambda: simonpress(1))
+
+        button2.grid(row=3, column=0, padx=10, pady=10)
+
+        button3 = ttk.Button(self, command =lambda: simonpress(2))
+
+        button3.grid(row=3, column=2, padx=10, pady=10)
+
+        button4 = ttk.Button(self, command=lambda: simonpress(3))
+
+        button4.grid(row=4, column=1, padx=10, pady=10)
+        
+        start_button = ttk.Button(self, text="Start",
+                      command=lambda: startSimon())
+
+        # putting the button in its place by
+        # using grid
+        start_button.grid(row=5, column=1, padx=10, pady=10)
+>>>>>>> Stashed changes
 
         # button to show frame 3 with text
         # layout3
@@ -570,8 +604,187 @@ class Game2(tk.Frame):
 
         # putting the button in its place by
         # using grid
+<<<<<<< Updated upstream
         button2.grid(row=1, column=0, padx=10, pady=10)
 
+=======
+        button5.grid(row=6, column=1, padx=10, pady=10)
+        
+        self.simon = [0]
+        self.pressed = [0]
+        score = 0
+        base_wave = s.Sine(FREQUENCY)
+        sequence = base_wave * s.Envelope(SAMPLE_PERIOD, 1)
+        sig = sequence << 1
+        self.buttons = [button1, button2, button3, button4]
+        self.game_is_running = False
+        self.score = 0
+        self.seqpos = 0
+        self.existingrun = False
+        self.finished = False
+        
+        
+        global sess
+    
+        
+        def startSimon():
+            if start_button['text'] == 'Start':
+                self.score = 0
+                self.seqpos = 0
+                self.simon = [0]
+                ChangeLabelText(hit_counter, str(self.score))
+                ChangeLabelText(label1, "Score: ")
+                sess.open()
+                self.game_is_running = True
+                # for i in range(9):
+                #      ChangeLabelText(button_names[i], " ")
+                ChangeLabelText(start_button, "Stop")
+                the_button = random.randint(0,3)
+                self.simon[0]=the_button
+                ChangeLabelText(self.buttons[the_button], "X")
+                self.after(1800, lambda:ChangeLabelText(self.buttons[the_button], " "))
+                sess.play(self.simon[0], sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+            else:  # The game is running, so stop the game and reset everything
+                start_button['text'] = "Start"
+                self.game_is_running = False
+        
+        def simonpress(m):
+            if len(self.simon) == 1 and m==self.simon[0]:
+                self.pressed = [m]
+                self.score+=1
+                print('add one to score')
+                ChangeLabelText(hit_counter, str(self.score))
+                the_button = random.randint(0,3)
+                self.simon.append(the_button)
+                playsequence(0)
+            elif len(self.simon) == 1 and m!=self.simon[0]:
+                print("simon press game over")
+                ChangeLabelText(hit_counter, " ")
+                ChangeLabelText(label1, "Game Over")
+                ChangeLabelText(start_button, "Start")
+                self.pressed = [0]
+                self.simon = [0]
+                sess.open()
+                sess.play_all(sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+            elif len(self.simon)>1 and self.existingrun == True:
+                self.pressed.append(m)
+                validate(len(self.pressed)-1)
+            elif len(self.simon)>1 and len(self.pressed)<=1 and self.existingrun ==False:
+                self.pressed = [m]
+                validate(len(self.pressed)-1)
+                self.existingrun = True
+                                            #!!this is unfinished
+                # self.score+=1
+                # print('add one to score')
+                # ChangeLabelText(hit_counter, str(self.score))
+                # the_button = random.randint(0,3)
+                # self.simon.append(the_button)
+                # playsequence(0)
+                # print(self.simon)
+        
+        def validate(x):
+            print(self.pressed)
+            print(len(self.pressed))
+            print(x)
+            print(len(self.simon)-1)
+            if x == len(self.simon)-1 and self.finished ==False:
+                 self.finished = True
+                 validate(x)
+            elif self.finished == True:
+                 print('finished')
+                 if self.pressed[x] == self.simon[x] and x>0:
+                    x -=1
+                    validate(x)
+                 elif self.pressed[x] == self.simon[x] and x==0:
+                    self.score += 1
+                    print('yay!')
+                    ChangeLabelText(hit_counter, str(self.score))
+                    the_button = random.randint(0,3)
+                    self.pressed = [0]
+                    self.simon.append(the_button)
+                    self.existingrun = False
+                    self.finished = False
+                    playsequence(0)
+                 elif self.pressed != self.simon[x]:
+                    ChangeLabelText(hit_counter, " ")
+                    ChangeLabelText(label1, "Game Over")
+                    ChangeLabelText(start_button, "Start")
+                    self.pressed = [0]
+                    self.simon = [0]
+                    self.existingrun = False
+                    self.finished = False
+                    sess.open()
+              
+                    sess.play_all(sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                    time.sleep(sig.length*2)
+                    sess.close()
+            else:
+               if self.pressed[x] != self.simon[x]:
+                    print(self.pressed)
+                    print(x)
+                    ChangeLabelText(hit_counter, " ")
+                    ChangeLabelText(label1, "Game Over")
+                    ChangeLabelText(start_button, "Start")
+                    self.pressed = [0]
+                    self.simon = [0]
+                    self.existingrun = False
+                    sess.open()
+              
+                    sess.play_all(sig)
+                
+                # The Signal will immediately start playing in the Session's audio thread,
+                # but we need to sleep this thread so that the program doesn't continue prematurely
+                    time.sleep(sig.length*2)
+                    sess.close()
+             
+                
+                            
+        def playsequence(x):
+            j=0
+            print(self.simon)
+            if x == 0:
+                this_button = self.simon[x]
+                sess.open()
+          
+                sess.play(self.simon[x], sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+                x+=1
+            else:
+                j = self.simon[x]
+                print(j)
+                self.after(500, lambda: ChangeLabelText(self.buttons[j], "X"))
+                self.after(1000, lambda:ChangeLabelText(self.buttons[j], " "))
+                sess.open()
+          
+                sess.play(self.simon[x], sig)
+            
+            # The Signal will immediately start playing in the Session's audio thread,
+            # but we need to sleep this thread so that the program doesn't continue prematurely
+                time.sleep(sig.length*2)
+                sess.close()
+                x+=1
+            if x<len(self.simon):
+                self.after(1000, playsequence(x))
+        
+            
+>>>>>>> Stashed changes
 
 def print_mapping(value, char_mapping_dict):
     if value.isalnum() and value in char_mapping_dict:
