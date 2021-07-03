@@ -532,7 +532,22 @@ We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder 
 
 <a name="S11"></a>
 ## Step 11: How to Connect to the GUI
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig28.png)
 Watch this video to learn how to connect a VTTV to the GUI: https://www.youtube.com/watch?v=kK3CzA-RoKw
+
+VTTV GUI Modes:
+
+![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig29.png)
+
+Craft Mode: Craft mode allows users to craft their own sensory experiences using the pressure sensors to customize and modulate the intensity of vibration of the VTTV.
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig30.png" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig31.png" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig32.png" width ="400" />
+
+Train Mode: Train mode includes two sections: letters and numbers. We have designed a standard encoding system for letters and numbers, like braille for your tongue! Use these modes to learn the system.
+
+<img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig33.png" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig34.png" width ="400" /> <img src = "https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig35.png" width ="400" />
+
+Game Mode: VTTV includes two classic games -- Whack a Mole and Simon Vibes -- that can be played by whacking the vibrations felt on the tongue with the buttons onscreen or repeating the patterns as Simon plays them on your taste buds.
 
 <a name="S12"></a>
 ## Step 12: Done!
