@@ -531,7 +531,7 @@ We haven't quite formed a system for encasing the TDU, but here's what we've had
 We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder mixes (Figure 2, 3, & 4) with much success. For the store-bought gummies & chocolate, all you need to do is carefully melt them in a microwave, pour them into the mold (make sure to leave space), then place the TDU into the mold until it's submerged (Figure 1). For the powder mixes, you follow the same process but pour the mixture into the mold before it hardens, and then place in the refrigerator.
 
 <a name="S11"></a>
-## Step 11: How to Connect to the GUI
+## Step 11: How to Connect to the GUI & Modes
 
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig28.png)
 
