@@ -532,7 +532,9 @@ We've used gummy bears, chocolate chips, chocolate bars, and gummy candy powder 
 
 <a name="S11"></a>
 ## Step 11: How to Connect to the GUI
+
 ![](https://github.com/ADataDate/Cyborg-Crafts-VTTV/blob/main/images/fig28.png)
+
 Watch this video to learn how to connect a VTTV to the GUI: https://www.youtube.com/watch?v=kK3CzA-RoKw
 
 VTTV GUI Modes:
